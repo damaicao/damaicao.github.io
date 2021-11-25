@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Damaicao的博客</title>
+        <link>https://damaicao.github.io/</link>
+        <description>Recent content on Damaicao的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Tue, 23 Nov 2021 23:06:34 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>First</title>
+        <link>https://damaicao.github.io/post/first/</link>
+        <pubDate>Tue, 23 Nov 2021 23:06:34 +0800</pubDate>
+        
+        <guid>https://damaicao.github.io/post/first/</guid>
+        <description>&lt;p&gt;[params.social]                                         # 社交链接
+a-email = &amp;ldquo;mailto:youthlql@foxmail.com&amp;rdquo;
+b-stack-overflow = &amp;ldquo;http://localhost:1313&amp;rdquo;
+c-twitter = &amp;ldquo;http://localhost:1313&amp;rdquo;
+d-facebook = &amp;ldquo;http://localhost:1313&amp;rdquo;
+e-linkedin = &amp;ldquo;http://localhost:1313&amp;rdquo;
+f-google = &amp;ldquo;http://localhost:1313&amp;rdquo;
+g-github = &amp;ldquo;http://localhost:1313&amp;rdquo;
+h-weibo = &amp;ldquo;http://localhost:1313&amp;rdquo;
+i-zhihu = &amp;ldquo;http://localhost:1313&amp;rdquo;
+j-douban = &amp;ldquo;http://localhost:1313&amp;rdquo;
+k-pocket = &amp;ldquo;http://localhost:1313&amp;rdquo;
+l-tumblr = &amp;ldquo;http://localhost:1313&amp;rdquo;
+m-instagram = &amp;ldquo;http://localhost:1313&amp;rdquo;
+n-gitlab = &amp;ldquo;http://localhost:1313&amp;rdquo;
+o-bilibili = &amp;ldquo;http://localhost:1313&amp;rdquo;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
