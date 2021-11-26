@@ -5,6 +5,25 @@
     <link>https://damaicao.github.io/categories/</link>
     <description>Recent content in Categories on Damaicao的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language><atom:link href="https://damaicao.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 26 Nov 2021 00:22:24 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据结构</title>
+      <link>https://damaicao.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Fri, 26 Nov 2021 00:22:24 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>https://damaicao.github.io/categories/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://damaicao.github.io/categories/test/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
