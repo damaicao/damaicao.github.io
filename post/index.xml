@@ -8,29 +8,21 @@
     <language>zh-cn</language>
     <lastBuildDate>Fri, 26 Nov 2021 00:22:24 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>testpng</title>
-      <link>https://damaicao.github.io/post/sjjg/</link>
+      <title>写博客的第一天</title>
+      <link>https://damaicao.github.io/post/%E6%96%B0%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/</link>
       <pubDate>Fri, 26 Nov 2021 00:22:24 +0800</pubDate>
       
-      <guid>https://damaicao.github.io/post/sjjg/</guid>
-      <description>你好 你好啊,昼眠和漓消消</description>
+      <guid>https://damaicao.github.io/post/%E6%96%B0%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/</guid>
+      <description>20211118181809
+你好 你好啊,昼眠和漓消消</description>
     </item>
     
     <item>
-      <title>随随便便</title>
-      <link>https://damaicao.github.io/post/%E9%9A%8F%E9%9A%8F%E4%BE%BF%E4%BE%BF/</link>
-      <pubDate>Fri, 26 Nov 2021 00:22:24 +0800</pubDate>
-      
-      <guid>https://damaicao.github.io/post/%E9%9A%8F%E9%9A%8F%E4%BE%BF%E4%BE%BF/</guid>
-      <description>你好 你好啊,昼眠和漓消消</description>
-    </item>
-    
-    <item>
-      <title>Day001</title>
-      <link>https://damaicao.github.io/post/day001/</link>
+      <title>Day01</title>
+      <link>https://damaicao.github.io/post/day01/</link>
       <pubDate>Fri, 26 Nov 2021 00:15:58 +0800</pubDate>
       
-      <guid>https://damaicao.github.io/post/day001/</guid>
+      <guid>https://damaicao.github.io/post/day01/</guid>
       <description>拉菲-你不冷吗 – 锦里の画作室
 线性结构  数组,队列,链表, 栈
 稀疏数组 **定义:**当一个数组中大部分元素为0,或者为同一个值的数组时,可以使用稀疏数组来保存该数组。
@@ -48,15 +40,6 @@
       
       <guid>https://damaicao.github.io/post/%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98/</guid>
       <description>经典算法  汉诺塔问题 =&amp;gt; 分治算法 八皇后问题 =&amp;gt; 回溯/分治算法 马踏棋盘问题 =&amp;gt; 图的深度优化遍历算法(DFS)+贪心算法优化  主题内容  稀疏数组和队列  稀疏数组 队列   链表  单链表 双向链表 单向环形链表   栈 递归  迷宫问题 八皇后   排序算法  内部 使用内存  插入  直接 间接   选择  简单选择 堆排序   交换  冒泡 快速   归并 基数(桶排序)   外部排序 使用内存和外存   查找算法  线性查找 二分查找 插值查找 斐波那契(黄金分割法)查找   哈希表 树  二叉树  顺序存储二叉树 线索化二叉树   堆排序 赫夫曼树 赫夫曼编码 二叉排序树 平衡二叉树(AVL树)   多路查找树  二叉树与B树 2-3树 B树,B+树,B*树   图  深度优先搜索   十大算法  二分查找 分治算法 动态规划算法 KMP算法 贪心算法 普利姆算法 克鲁斯卡尔算法 迪杰斯特拉算法 弗洛伊德算法 马踏棋盘算法    </description>
-    </item>
-    
-    <item>
-      <title>First</title>
-      <link>https://damaicao.github.io/post/first/</link>
-      <pubDate>Tue, 23 Nov 2021 23:06:34 +0800</pubDate>
-      
-      <guid>https://damaicao.github.io/post/first/</guid>
-      <description></description>
     </item>
     
   </channel>

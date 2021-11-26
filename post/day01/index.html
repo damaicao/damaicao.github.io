@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='开始'><title>算法问题</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='开始学习数据结构'><title>Day01</title>
 
-<link rel='canonical' href='https://damaicao.github.io/post/%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98/'>
+<link rel='canonical' href='https://damaicao.github.io/post/day01/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='算法问题'>
-<meta property='og:description' content='开始'>
-<meta property='og:url' content='https://damaicao.github.io/post/%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Day01'>
+<meta property='og:description' content='开始学习数据结构'>
+<meta property='og:url' content='https://damaicao.github.io/post/day01/'>
 <meta property='og:site_name' content='Damaicao的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数据结构' /><meta property='article:published_time' content='2021-11-26T00:15:58&#43;08:00'/><meta property='article:modified_time' content='2021-11-26T00:15:58&#43;08:00'/><meta property='og:image' content='https://damaicao.github.io/image/%E5%85%83%E6%97%A6%E8%B4%BA%E5%9B%BE.png' />
-<meta name="twitter:title" content="算法问题">
-<meta name="twitter:description" content="开始"><meta name="twitter:card" content="summary_large_image">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content=' 数据结构' /><meta property='article:published_time' content='2021-11-26T00:15:58&#43;08:00'/><meta property='article:modified_time' content='2021-11-26T00:15:58&#43;08:00'/><meta property='og:image' content='https://damaicao.github.io/image/%E5%85%83%E6%97%A6%E8%B4%BA%E5%9B%BE.png' />
+<meta name="twitter:title" content="Day01">
+<meta name="twitter:description" content="开始学习数据结构"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://damaicao.github.io/image/%E5%85%83%E6%97%A6%E8%B4%BA%E5%9B%BE.png' />
     <link rel="shortcut icon" href="img/favicon.ico" />
 
@@ -64,9 +64,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/post/%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98/">
+            <a href="/post/day01/">
                 
-                    <img src="/image/%e5%85%83%e6%97%a6%e8%b4%ba%e5%9b%be.png" loading="lazy" alt="Featured image of post 算法问题" />
+                    <img src="/image/%e5%85%83%e6%97%a6%e8%b4%ba%e5%9b%be.png" loading="lazy" alt="Featured image of post Day01" />
                 
             </a>
         </div>
@@ -84,12 +84,12 @@
     
 
     <h2 class="article-title">
-        <a href="/post/%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98/">算法问题</a>
+        <a href="/post/day01/">Day01</a>
     </h2>
 
     
     <h3 class="article-subtitle">
-        开始
+        开始学习数据结构
     </h3>
     
 
@@ -117,114 +117,68 @@
 </header>
 
     <section class="article-content">
-    <h2 id="经典算法">经典算法</h2>
+    <p><figure 
+	>
+	<a href="https://cdn.jsdelivr.net/gh/damaicao/damaicao-img/blog-imgs/%E6%8B%89%E8%8F%B2-%E4%BD%A0%E4%B8%8D%E5%86%B7%E5%90%97%20%E2%80%93%20%E9%94%A6%E9%87%8C%E3%81%AE%E7%94%BB%E4%BD%9C%E5%AE%A4.jpg" >
+		<img src="https://cdn.jsdelivr.net/gh/damaicao/damaicao-img/blog-imgs/%E6%8B%89%E8%8F%B2-%E4%BD%A0%E4%B8%8D%E5%86%B7%E5%90%97%20%E2%80%93%20%E9%94%A6%E9%87%8C%E3%81%AE%E7%94%BB%E4%BD%9C%E5%AE%A4.jpg"
+			
+			
+			
+			loading="lazy"
+			alt="拉菲-你不冷吗 – 锦里の画作室">
+	</a>
+	
+	<figcaption>拉菲-你不冷吗 – 锦里の画作室</figcaption>
+	
+</figure></p>
+<h1 id="线性结构">线性结构</h1>
+<hr>
+<p>数组,队列,链表, 栈</p>
+<h2 id="稀疏数组">稀疏数组</h2>
+<p>**定义:**当一个数组中大部分元素为0,或者为同一个值的数组时,可以使用稀疏数组来保存该数组。</p>
+<p>稀疏数组的处理方法是</p>
 <ol>
-<li>汉诺塔问题 =&gt;  <strong>分治算法</strong></li>
-<li>八皇后问题 =&gt;  <strong>回溯/分治算法</strong></li>
-<li>马踏棋盘问题 =&gt; <strong>图的深度优化遍历算法(DFS)+贪心算法优化</strong></li>
+<li>记录数组一共有几行几列,有多少个不同的值</li>
+<li>把具有不同值的元素的行列及值记录在一个小规模的数组中,从而缩小程序的规模</li>
 </ol>
-<h2 id="主题内容">主题内容</h2>
+<p><strong>二维数组转稀硫数组的思路:</strong></p>
 <ol>
-<li>稀疏数组和队列
+<li>遍历原始的二维数组,得到有效数据的个数sum</li>
+<li>根据sum就可以创建稀硫数组 <code>sparseArr int[sum+1][3]</code></li>
+<li>将二维数组的有效数据数据存入到稀硫数组</li>
+</ol>
+<p><strong>稀硫数组转原始的二维数组的思路:</strong></p>
 <ol>
-<li>稀疏数组</li>
-<li>队列</li>
+<li>先读取稀硫数组的第一行,根据第一行的数据,创建原始的二维数组,比如上面的 <code>chessArr2=int[11[11]</code></li>
+<li>在读取稀硫数组后几行的数据,并赋给原始的二维数组即可</li>
 </ol>
-</li>
-<li>链表
+<hr>
+<h2 id="链表">链表</h2>
+<p><strong>小结</strong></p>
 <ol>
-<li>单链表</li>
-<li>双向链表</li>
-<li>单向环形链表</li>
+<li>链表是以节点的方式来存储,是 <code>链式存储 </code></li>
+<li>每个节点包含data域,next域:指向下一个节点</li>
+<li>如图:发现链表的各个节点 <code>不一定是连续存储</code></li>
+<li>链表分 <code>带头节点的链表</code> 和 <code>没有头节点的链表</code> ,根据实际的需求来确定</li>
 </ol>
-</li>
-<li>栈</li>
-<li>递归
+<h3 id="双向链表">双向链表</h3>
+<hr>
+<h2 id="栈">栈</h2>
 <ol>
-<li>迷宫问题</li>
-<li>八皇后</li>
+<li>栈的英文为( stack)</li>
+<li>栈是一个先入后出( FILO-First In last out)的有序列表。</li>
+<li>栈(stack)是限制线性表中元素的插入和删除只能在线性表的同一端进行的种特殊线性表。允许插入和删除的一端,为变化的一端,称为栈顶(Top),另端为固定的一端,称为栈底( Bottom)</li>
+<li>根据栈的定义可知,最先放入栈中元素在栈底,最后放入的元素在栈项,而删除元素刚好相反,最后放入的元素最先删除,最先放入的元素最后删除</li>
 </ol>
-</li>
-<li>排序算法
+<h3 id="应用场景">应用场景</h3>
 <ol>
-<li>内部 <strong>使用内存</strong>
-<ol>
-<li>插入
-<ol>
-<li>直接</li>
-<li>间接</li>
+<li>子程序的调用:在跳往子程序前,会先将下个指令的地址存到堆栈中,直到子程序执行完后再将地址取出,以回到原来的程序中。</li>
+<li>处理递归调用:和子程序的调用类似,只是除了储存下一个指令的地址外,也将参数、区域变量等数据存入堆栈中。</li>
+<li>表达式的转换[中缀表达式转后缀表达式]与求值(实际解决)。</li>
+<li>二叉树的遍历</li>
+<li>图形的深度优先 (depth-first)搜索法。</li>
 </ol>
-</li>
-<li>选择
-<ol>
-<li>简单选择</li>
-<li>堆排序</li>
-</ol>
-</li>
-<li>交换
-<ol>
-<li>冒泡</li>
-<li>快速</li>
-</ol>
-</li>
-<li>归并</li>
-<li>基数(桶排序)</li>
-</ol>
-</li>
-<li>外部排序 <strong>使用内存和外存</strong></li>
-</ol>
-</li>
-<li>查找算法
-<ol>
-<li>线性查找</li>
-<li>二分查找</li>
-<li>插值查找</li>
-<li>斐波那契(黄金分割法)查找</li>
-</ol>
-</li>
-<li>哈希表</li>
-<li>树
-<ol>
-<li>二叉树
-<ol>
-<li>顺序存储二叉树</li>
-<li>线索化二叉树</li>
-</ol>
-</li>
-<li>堆排序</li>
-<li>赫夫曼树</li>
-<li>赫夫曼编码</li>
-<li>二叉排序树</li>
-<li>平衡二叉树(AVL树)</li>
-</ol>
-</li>
-<li>多路查找树
-<ol>
-<li>二叉树与B树</li>
-<li>2-3树</li>
-<li>B树,B+树,B*树</li>
-</ol>
-</li>
-<li>图
-<ol>
-<li>深度优先搜索</li>
-</ol>
-</li>
-<li>十大算法
-<ol>
-<li>二分查找</li>
-<li>分治算法</li>
-<li>动态规划算法</li>
-<li>KMP算法</li>
-<li>贪心算法</li>
-<li>普利姆算法</li>
-<li>克鲁斯卡尔算法</li>
-<li>迪杰斯特拉算法</li>
-<li>弗洛伊德算法</li>
-<li>马踏棋盘算法</li>
-</ol>
-</li>
-</ol>
+<h3 id="前中后缀表达式">前,中,后缀表达式</h3>
 
 </section>
 
@@ -377,8 +331,18 @@
                 <div class="widget--toc">
                     <nav id="TableOfContents">
   <ul>
-    <li><a href="#经典算法">经典算法</a></li>
-    <li><a href="#主题内容">主题内容</a></li>
+    <li><a href="#稀疏数组">稀疏数组</a></li>
+    <li><a href="#链表">链表</a>
+      <ul>
+        <li><a href="#双向链表">双向链表</a></li>
+      </ul>
+    </li>
+    <li><a href="#栈">栈</a>
+      <ul>
+        <li><a href="#应用场景">应用场景</a></li>
+        <li><a href="#前中后缀表达式">前,中,后缀表达式</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
                 </div>
