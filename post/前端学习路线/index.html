@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='前端学习路线  这份学习路线并不完美，也不会有最终形态，正如前端不可预见、永无止境的未来。[by 程序员鱼皮](liyupi/code-roadmap: 编程学习路线 (github.com))
+ 💂 &#43; 💻 = 👴🏽
+大纲  前言 - 学编程需要的特质 前端学习七阶段  前端入门 巩固基础 前端工程化 前端优化 前端生态 前端求职 前端未来   尾声 - 持续学习 我的前端学习路线  前言 - 学编程需要的特质 相信自己有能力，那么你就真的会有！
+ 兴趣 坚持 付出 心态  一、前端入门 开发工具   VSCode
+  WebStorm
+  Atom
+  Sublime Text
+  HBuilder X
+  记事本
+  在线 IDE
+  HTML  基本语法  CSS  盒子模型 内联元素/块状元素 文档流 浮动 float 元素堆叠 块格式化上下文(BFC) 响应式布局 Flex 布局 Grid 布局 CSS 动画 瀑布流  JavaScript  基本语法 基本类型 Javascript 对象 原型和继承 作用域 闭包 this ES6&#43; 单线程与异步 Javascript DOM/BOM API  二、巩固基础 前端基础知识   互联网'><title></title>
+
+<link rel='canonical' href='https://damaicao.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content=''>
+<meta property='og:description' content='前端学习路线  这份学习路线并不完美，也不会有最终形态，正如前端不可预见、永无止境的未来。[by 程序员鱼皮](liyupi/code-roadmap: 编程学习路线 (github.com))
+ 💂 &#43; 💻 = 👴🏽
+大纲  前言 - 学编程需要的特质 前端学习七阶段  前端入门 巩固基础 前端工程化 前端优化 前端生态 前端求职 前端未来   尾声 - 持续学习 我的前端学习路线  前言 - 学编程需要的特质 相信自己有能力，那么你就真的会有！
+ 兴趣 坚持 付出 心态  一、前端入门 开发工具   VSCode
+  WebStorm
+  Atom
+  Sublime Text
+  HBuilder X
+  记事本
+  在线 IDE
+  HTML  基本语法  CSS  盒子模型 内联元素/块状元素 文档流 浮动 float 元素堆叠 块格式化上下文(BFC) 响应式布局 Flex 布局 Grid 布局 CSS 动画 瀑布流  JavaScript  基本语法 基本类型 Javascript 对象 原型和继承 作用域 闭包 this ES6&#43; 单线程与异步 Javascript DOM/BOM API  二、巩固基础 前端基础知识   互联网'>
+<meta property='og:url' content='https://damaicao.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/'>
+<meta property='og:site_name' content='Damaicao的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' />
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="前端学习路线  这份学习路线并不完美，也不会有最终形态，正如前端不可预见、永无止境的未来。[by 程序员鱼皮](liyupi/code-roadmap: 编程学习路线 (github.com))
+ 💂 &#43; 💻 = 👴🏽
+大纲  前言 - 学编程需要的特质 前端学习七阶段  前端入门 巩固基础 前端工程化 前端优化 前端生态 前端求职 前端未来   尾声 - 持续学习 我的前端学习路线  前言 - 学编程需要的特质 相信自己有能力，那么你就真的会有！
+ 兴趣 坚持 付出 心态  一、前端入门 开发工具   VSCode
+  WebStorm
+  Atom
+  Sublime Text
+  HBuilder X
+  记事本
+  在线 IDE
+  HTML  基本语法  CSS  盒子模型 内联元素/块状元素 文档流 浮动 float 元素堆叠 块格式化上下文(BFC) 响应式布局 Flex 布局 Grid 布局 CSS 动画 瀑布流  JavaScript  基本语法 基本类型 Javascript 对象 原型和继承 作用域 闭包 this ES6&#43; 单线程与异步 Javascript DOM/BOM API  二、巩固基础 前端基础知识   互联网">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"></a>
+    </h2>
+
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="前端学习路线">前端学习路线</h1>
+<blockquote>
+<p>这份学习路线并不完美，也不会有最终形态，正如前端不可预见、永无止境的未来。[by 程序员鱼皮](<a class="link" href="https://github.com/liyupi/code-roadmap"  target="_blank" rel="noopener"
+    >liyupi/code-roadmap: 编程学习路线 (github.com)</a>)</p>
+</blockquote>
+<p>💂 + 💻 = 👴🏽</p>
+<h2 id="大纲">大纲</h2>
+<ol>
+<li>前言 - 学编程需要的特质</li>
+<li>前端学习七阶段
+<ol>
+<li>前端入门</li>
+<li>巩固基础</li>
+<li>前端工程化</li>
+<li>前端优化</li>
+<li>前端生态</li>
+<li>前端求职</li>
+<li>前端未来</li>
+</ol>
+</li>
+<li>尾声 - 持续学习</li>
+<li>我的前端学习路线</li>
+</ol>
+<h2 id="前言---学编程需要的特质">前言 - 学编程需要的特质</h2>
+<p><strong>相信自己有能力，那么你就真的会有！</strong></p>
+<ul>
+<li>兴趣</li>
+<li>坚持</li>
+<li>付出</li>
+<li>心态</li>
+</ul>
+<h2 id="一前端入门">一、前端入门</h2>
+<h3 id="开发工具">开发工具</h3>
+<ul>
+<li>
+<p>VSCode</p>
+</li>
+<li>
+<p>WebStorm</p>
+</li>
+<li>
+<p>Atom</p>
+</li>
+<li>
+<p>Sublime Text</p>
+</li>
+<li>
+<p>HBuilder X</p>
+</li>
+<li>
+<p>记事本</p>
+</li>
+<li>
+<p>在线 IDE</p>
+</li>
+</ul>
+<h3 id="html">HTML</h3>
+<ul>
+<li>基本语法</li>
+</ul>
+<h3 id="css">CSS</h3>
+<ul>
+<li>盒子模型</li>
+<li>内联元素/块状元素</li>
+<li>文档流</li>
+<li>浮动 float</li>
+<li>元素堆叠</li>
+<li>块格式化上下文(BFC)</li>
+<li><strong>响应式布局</strong></li>
+<li>Flex 布局</li>
+<li>Grid 布局</li>
+<li>CSS 动画</li>
+<li>瀑布流</li>
+</ul>
+<h3 id="javascript">JavaScript</h3>
+<ul>
+<li>基本语法</li>
+<li>基本类型</li>
+<li>Javascript 对象</li>
+<li>原型和继承</li>
+<li>作用域</li>
+<li>闭包</li>
+<li>this</li>
+<li>ES6+</li>
+<li>单线程与异步 Javascript</li>
+<li>DOM/BOM API</li>
+</ul>
+<h2 id="二巩固基础">二、巩固基础</h2>
+<h3 id="前端基础知识">前端基础知识</h3>
+<ul>
+<li>
+<p>互联网</p>
+</li>
+<li>
+<p>域名</p>
+</li>
+<li>
+<p>DNS</p>
+</li>
+<li>
+<p>服务器</p>
+</li>
+<li>
+<p>浏览器</p>
+<ul>
+<li>浏览器 DOM 事件流/事件委托</li>
+<li>浏览器加载顺序</li>
+<li>浏览器渲染过程</li>
+<li>浏览器 EventLoop</li>
+<li>浏览器同源策略</li>
+<li>跨域方案/CORS</li>
+<li>浏览器缓存</li>
+<li>常见调试技巧</li>
+</ul>
+</li>
+<li>
+<p>HTTP</p>
+<ul>
+<li>HTTP 请求过程</li>
+<li>常见 HTTP 协议</li>
+<li>HTTP 1.0/HTTP 1.1/HTTP2/HTTP3</li>
+<li>Ajax</li>
+<li>WebSocket</li>
+</ul>
+</li>
+</ul>
+<h3 id="计算机基础">计算机基础</h3>
+<h4 id="算法和数据结构">算法和数据结构</h4>
+<h4 id="计算机网络">计算机网络</h4>
+<h4 id="操作系统">操作系统</h4>
+<h3 id="软件开发基础">软件开发基础</h3>
+<h4 id="设计模式">设计模式</h4>
+<h4 id="git-版本控制">Git 版本控制</h4>
+<h4 id="linux-服务器">Linux 服务器</h4>
+<h2 id="三前端工程化">三、前端工程化</h2>
+<h3 id="研发流程">研发流程</h3>
+<ol>
+<li>技术选型</li>
+<li>初始化</li>
+<li>开发</li>
+<li>本地测试</li>
+<li>代码提交</li>
+<li>编译、打包、构建</li>
+<li>部署</li>
+<li>集成测试</li>
+<li>发布上线</li>
+</ol>
+<h3 id="代码托管">代码托管</h3>
+<ul>
+<li>GitHub</li>
+<li>Gitee</li>
+<li>GitLab</li>
+</ul>
+<h3 id="nodejs">Node.JS</h3>
+<h4 id="包管理">包管理</h4>
+<ul>
+<li>npm</li>
+<li>yarn</li>
+<li>bower</li>
+<li>npx</li>
+</ul>
+<h3 id="开发框架">开发框架</h3>
+<h4 id="javascript-框架">JavaScript 框架</h4>
+<h5 id="vue">Vue</h5>
+<ul>
+<li>Vue Router</li>
+</ul>
+<h5 id="react">React</h5>
+<ul>
+<li>React DOM</li>
+<li>React Router</li>
+<li>Redux</li>
+<li>MobX</li>
+<li>React Hooks</li>
+</ul>
+<h5 id="angular">Angular</h5>
+<ul>
+<li>RxJS</li>
+<li>NgRx</li>
+</ul>
+<h5 id="svelte">Svelte</h5>
+<h4 id="css-框架">CSS 框架</h4>
+<ul>
+<li>BootStrap</li>
+<li>Tailwind CSS</li>
+</ul>
+<h3 id="封装库">封装库</h3>
+<h4 id="组件库">组件库</h4>
+<ul>
+<li>LayUI</li>
+<li>ElementUI</li>
+<li>VantUI</li>
+<li>Ant Design</li>
+</ul>
+<h4 id="数据可视化">数据可视化</h4>
+<ul>
+<li>EChart</li>
+<li>HighChart</li>
+<li>D3.js</li>
+<li>AntV</li>
+</ul>
+<h4 id="工具库">工具库</h4>
+<ul>
+<li>jQuery</li>
+<li>moment</li>
+<li>lodash</li>
+<li>axios</li>
+</ul>
+<h4 id="字体图标库">字体图标库</h4>
+<ul>
+<li>IconFont</li>
+<li>IconPark</li>
+<li>Font Awesome</li>
+</ul>
+<h3 id="脚手架">脚手架</h3>
+<ul>
+<li>
+<p>vue-cli</p>
+</li>
+<li>
+<p>create-react-app</p>
+</li>
+<li>
+<p>Yeoman</p>
+</li>
+</ul>
+<h3 id="前端架构">前端架构</h3>
+<ul>
+<li>前端模块化</li>
+<li>SPA</li>
+<li>多页应用</li>
+<li>前端路由</li>
+<li>PWA</li>
+</ul>
+<h4 id="服务端渲染">服务端渲染</h4>
+<ul>
+<li>Next.js（React）</li>
+<li>Nuxt.js（Vue）</li>
+<li>Universal（Angular）</li>
+</ul>
+<h4 id="bff">BFF</h4>
+<ul>
+<li>GraphQL</li>
+</ul>
+<h4 id="前端微服务">前端微服务</h4>
+<ul>
+<li>qiankun</li>
+<li></li>
+</ul>
+<h3 id="css-in-js">CSS in JS</h3>
+<ul>
+<li>内联样式</li>
+<li>声明样式</li>
+<li>引入样式</li>
+</ul>
+<h4 id="css-模块化">CSS 模块化</h4>
+<ul>
+<li>CSS Modules</li>
+<li>styled-components</li>
+<li>Styled JSX</li>
+<li>Emotion</li>
+</ul>
+<h3 id="开发调试">开发调试</h3>
+<ul>
+<li>webpack-dev-server</li>
+<li>serve</li>
+</ul>
+<h4 id="内网穿透">内网穿透</h4>
+<ul>
+<li>Ngrok</li>
+<li>NATAPP</li>
+</ul>
+<h3 id="css-预编译">CSS 预编译</h3>
+<ul>
+<li>SASS</li>
+<li>PostCSS</li>
+<li>Stylus</li>
+<li>LESS</li>
+</ul>
+<h3 id="测试">测试</h3>
+<h4 id="测试分类">测试分类</h4>
+<ul>
+<li>单元测试</li>
+<li>集成测试</li>
+<li>E2E 测试</li>
+</ul>
+<h4 id="mock">Mock</h4>
+<h4 id="测试框架">测试框架</h4>
+<ul>
+<li>
+<p>Jest</p>
+</li>
+<li>
+<p>Enzyme</p>
+</li>
+<li>
+<p>Puppeteer</p>
+</li>
+<li>
+<p>Mocha</p>
+</li>
+<li>
+<p>Chai</p>
+</li>
+<li>
+<p>Jasmine</p>
+</li>
+<li>
+<p>Headless Browser</p>
+</li>
+</ul>
+<h3 id="代码质量">代码质量</h3>
+<h4 id="开发规范">开发规范</h4>
+<ul>
+<li>Style Guide</li>
+</ul>
+<h4 id="类型校验">类型校验</h4>
+<ul>
+<li>TypeScript</li>
+</ul>
+<h4 id="代码检查">代码检查</h4>
+<ul>
+<li>ESLint</li>
+<li>StyleLint</li>
+</ul>
+<h4 id="代码风格">代码风格</h4>
+<ul>
+<li>Prettier</li>
+</ul>
+<h4 id="提交规范">提交规范</h4>
+<ul>
+<li>pre-commit</li>
+</ul>
+<h4 id="提交检查">提交检查</h4>
+<ul>
+<li>hosky</li>
+</ul>
+<h3 id="构建工具">构建工具</h3>
+<h4 id="自动化构建">自动化构建</h4>
+<ul>
+<li>Gulp</li>
+<li>npm script</li>
+<li>grant</li>
+</ul>
+<h4 id="打包工具">打包工具</h4>
+<ul>
+<li>Webpack</li>
+<li>Rollup</li>
+<li>Vite</li>
+<li>Parcel</li>
+<li>Snowpack</li>
+</ul>
+<h3 id="ci--cd">CI / CD</h3>
+<ul>
+<li>GitLab CI</li>
+<li>Jenkins</li>
+</ul>
+<h3 id="部署">部署</h3>
+<h4 id="web-服务器">Web 服务器</h4>
+<ul>
+<li>Nginx</li>
+<li>Apache</li>
+</ul>
+<h4 id="容器">容器</h4>
+<ul>
+<li>Docker</li>
+<li>K8s</li>
+</ul>
+<h4 id="部署策略">部署策略</h4>
+<ul>
+<li>全量发布</li>
+<li>蓝绿部署</li>
+<li>滚动发布</li>
+<li>灰度发布</li>
+</ul>
+<h3 id="监控告警">监控告警</h3>
+<ul>
+<li>前端埋点</li>
+<li>错误监控</li>
+<li>性能监控</li>
+<li>行为监控</li>
+</ul>
+<h2 id="四前端优化">四、前端优化</h2>
+<h3 id="性能优化">性能优化</h3>
+<h4 id="性能指标">性能指标</h4>
+<ul>
+<li>FP</li>
+<li>FCP</li>
+<li>FMP</li>
+<li>TTI</li>
+</ul>
+<h4 id="优化手段">优化手段</h4>
+<ul>
+<li>
+<p>性能监控</p>
+<ul>
+<li>Performance API</li>
+</ul>
+</li>
+<li>
+<p>样式优化</p>
+</li>
+<li>
+<p>JavaScript 优化</p>
+</li>
+<li>
+<p>代码分割</p>
+</li>
+<li>
+<p>资源压缩</p>
+</li>
+<li>
+<p>打包优化</p>
+</li>
+<li>
+<p>服务器优化</p>
+</li>
+<li>
+<p>缓存优化</p>
+<ul>
+<li>Service Worker</li>
+</ul>
+</li>
+<li>
+<p>动画性能</p>
+</li>
+<li>
+<p>dns-prefetch</p>
+</li>
+<li>
+<p>Lazy loading</p>
+</li>
+<li>
+<p>优化启动性能</p>
+<ul>
+<li>异步化</li>
+</ul>
+</li>
+<li>
+<p>渲染优化</p>
+</li>
+<li>
+<p>网络优化</p>
+</li>
+<li>
+<p>移动端性能优化</p>
+</li>
+</ul>
+<h3 id="用户体验">用户体验</h3>
+<ul>
+<li>骨架屏</li>
+</ul>
+<h3 id="兼容性">兼容性</h3>
+<h4 id="浏览器兼容性">浏览器兼容性</h4>
+<ul>
+<li>normalize.css</li>
+<li>html5shiv.js</li>
+<li>respond.js</li>
+<li>Babel</li>
+<li>Polyfill</li>
+</ul>
+<h4 id="屏幕分辨率兼容性">屏幕分辨率兼容性</h4>
+<h4 id="跨平台兼容性">跨平台兼容性</h4>
+<h3 id="seo">SEO</h3>
+<h3 id="安全">安全</h3>
+<ul>
+<li>XSS</li>
+<li>CSRF</li>
+<li>反爬虫</li>
+<li>SQL 注入</li>
+<li>DDoS</li>
+</ul>
+<h2 id="五前端生态">五、前端生态</h2>
+<h3 id="静态站点构建">静态站点构建</h3>
+<h4 id="开发">开发</h4>
+<ul>
+<li>react-static</li>
+</ul>
+<h4 id="博客">博客</h4>
+<ul>
+<li>Gatsby.js</li>
+<li>Docusaurus</li>
+<li>Hugo</li>
+<li>Hexo</li>
+</ul>
+<h4 id="文档">文档</h4>
+<ul>
+<li>JekyII</li>
+<li>Docsify</li>
+<li>VuePress</li>
+<li>Dumi</li>
+</ul>
+<h3 id="大前端">大前端</h3>
+<h4 id="移动应用">移动应用</h4>
+<ul>
+<li>Hybrid</li>
+<li>WebView</li>
+<li>React Native</li>
+<li>Flutter</li>
+</ul>
+<h4 id="移动应用打包">移动应用打包</h4>
+<ul>
+<li>Week</li>
+<li>Cordova</li>
+<li>Phonegap</li>
+<li>Ionic</li>
+</ul>
+<h4 id="桌面应用">桌面应用</h4>
+<ul>
+<li>Electron</li>
+<li>NW.js</li>
+<li>Proton Native</li>
+</ul>
+<h4 id="小程序">小程序</h4>
+<ul>
+<li>原生</li>
+<li>WebView</li>
+</ul>
+<h4 id="跨端开发框架">跨端开发框架</h4>
+<ul>
+<li>uni-app</li>
+<li>Taro</li>
+<li>Flutter</li>
+<li>Chameleon</li>
+<li>Wepy</li>
+<li>Rax</li>
+</ul>
+<h4 id="移动端调试">移动端调试</h4>
+<ul>
+<li>Chrome Dev Tools</li>
+<li>Android Simulator</li>
+<li>IOS Simulator</li>
+</ul>
+<h3 id="serverless">Serverless</h3>
+<h3 id="云开发">云开发</h3>
+<ul>
+<li>腾讯云云开发</li>
+<li>阿里云云开发</li>
+</ul>
+<h3 id="低代码">低代码</h3>
+<p>零代码</p>
+<ul>
+<li>腾讯云低码</li>
+<li>阿里宜搭</li>
+</ul>
+<h2 id="六前端求职">六、前端求职</h2>
+<h3 id="流程">流程</h3>
+<h3 id="简历">简历</h3>
+<h3 id="面试题库">面试题库</h3>
+<h3 id="面经">面经</h3>
+<h3 id="面试实战">面试实战</h3>
+<p>（模拟面试）</p>
+<h2 id="七前端未来">七、前端未来</h2>
+<ul>
+<li>
+<p>WebAssembly</p>
+</li>
+<li>
+<p>智能 UI</p>
+</li>
+<li>
+<p>React Server Component</p>
+</li>
+<li>
+<p>CSS Houdini</p>
+</li>
+</ul>
+<h3 id="webcomponents">WebComponents</h3>
+<ul>
+<li>HTML templates（HTML模板）</li>
+<li>Custom elements（自定义元素）</li>
+<li>Shadow DOM（影子DOM）</li>
+</ul>
+<h2 id="尾声---持续学习">尾声 - 持续学习</h2>
+<h3 id="优秀前端人的特质">优秀前端人的特质</h3>
+<h3 id="学习资源">学习资源</h3>
+<h3 id="前端资讯">前端资讯</h3>
+<h3 id="技术博客">技术博客</h3>
+<h3 id="heading"></h3>
+<h2 id="我的前端学习路线">我的前端学习路线</h2>
+<p>找项目：searchCode</p>
+<h2 id="todo">todo</h2>
+<p>优化 html、css、js 内容</p>
+<p>补充尾声内容</p>
+<p>描述和链接</p>
+<p>写一条线</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Damaicao的博客
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#大纲">大纲</a></li>
+    <li><a href="#前言---学编程需要的特质">前言 - 学编程需要的特质</a></li>
+    <li><a href="#一前端入门">一、前端入门</a>
+      <ul>
+        <li><a href="#开发工具">开发工具</a></li>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#javascript">JavaScript</a></li>
+      </ul>
+    </li>
+    <li><a href="#二巩固基础">二、巩固基础</a>
+      <ul>
+        <li><a href="#前端基础知识">前端基础知识</a></li>
+        <li><a href="#计算机基础">计算机基础</a></li>
+        <li><a href="#软件开发基础">软件开发基础</a></li>
+      </ul>
+    </li>
+    <li><a href="#三前端工程化">三、前端工程化</a>
+      <ul>
+        <li><a href="#研发流程">研发流程</a></li>
+        <li><a href="#代码托管">代码托管</a></li>
+        <li><a href="#nodejs">Node.JS</a></li>
+        <li><a href="#开发框架">开发框架</a></li>
+        <li><a href="#封装库">封装库</a></li>
+        <li><a href="#脚手架">脚手架</a></li>
+        <li><a href="#前端架构">前端架构</a></li>
+        <li><a href="#css-in-js">CSS in JS</a></li>
+        <li><a href="#开发调试">开发调试</a></li>
+        <li><a href="#css-预编译">CSS 预编译</a></li>
+        <li><a href="#测试">测试</a></li>
+        <li><a href="#代码质量">代码质量</a></li>
+        <li><a href="#构建工具">构建工具</a></li>
+        <li><a href="#ci--cd">CI / CD</a></li>
+        <li><a href="#部署">部署</a></li>
+        <li><a href="#监控告警">监控告警</a></li>
+      </ul>
+    </li>
+    <li><a href="#四前端优化">四、前端优化</a>
+      <ul>
+        <li><a href="#性能优化">性能优化</a></li>
+        <li><a href="#用户体验">用户体验</a></li>
+        <li><a href="#兼容性">兼容性</a></li>
+        <li><a href="#seo">SEO</a></li>
+        <li><a href="#安全">安全</a></li>
+      </ul>
+    </li>
+    <li><a href="#五前端生态">五、前端生态</a>
+      <ul>
+        <li><a href="#静态站点构建">静态站点构建</a></li>
+        <li><a href="#大前端">大前端</a></li>
+        <li><a href="#serverless">Serverless</a></li>
+        <li><a href="#云开发">云开发</a></li>
+        <li><a href="#低代码">低代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#六前端求职">六、前端求职</a>
+      <ul>
+        <li><a href="#流程">流程</a></li>
+        <li><a href="#简历">简历</a></li>
+        <li><a href="#面试题库">面试题库</a></li>
+        <li><a href="#面经">面经</a></li>
+        <li><a href="#面试实战">面试实战</a></li>
+      </ul>
+    </li>
+    <li><a href="#七前端未来">七、前端未来</a>
+      <ul>
+        <li><a href="#webcomponents">WebComponents</a></li>
+      </ul>
+    </li>
+    <li><a href="#尾声---持续学习">尾声 - 持续学习</a>
+      <ul>
+        <li><a href="#优秀前端人的特质">优秀前端人的特质</a></li>
+        <li><a href="#学习资源">学习资源</a></li>
+        <li><a href="#前端资讯">前端资讯</a></li>
+        <li><a href="#技术博客">技术博客</a></li>
+        <li><a href="#heading"></a></li>
+      </ul>
+    </li>
+    <li><a href="#我的前端学习路线">我的前端学习路线</a></li>
+    <li><a href="#todo">todo</a></li>
+  </ul>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
