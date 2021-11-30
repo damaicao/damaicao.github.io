@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - children:
   - children:
     - children:
@@ -223,3 +224,230 @@
       name: "[\u9AD8\u6E05\u4FEE\u590D]OptiFine_1.7.10_HD_U_C1[hukk\u6C49\u5316].jar"
     name: mods
   name: .minecraft
+=======
+- children:
+  - children:
+    - children:
+      - hash: b6e6ce2d0476d1d53686440f2fc70d2a27e289c2
+        length: 95415
+        name: Baubles-1.7.10-1.0.1.10.jar
+      - hash: 83ec0b20aaf7ec05e01ac42c1c99bada420af84d
+        length: 311450
+        name: CodeChickenLib-1.7.10-1.1.3.141-universal.jar
+      - hash: 272b13fa1e7bf303e358068482726b7bdd4b9ee2
+        length: 14371
+        name: PotionExtension-1.7.10-1.1.0.jar
+      name: 1.7.10
+    - children:
+      - hash: 4d7c1d7b16b80875d7fba8d72b2e24eece176124
+        length: 341614
+        name: EJML-core-0.26.jar
+      name: ic2
+    - children:
+      - hash: 421c2e36e7cb7d18432a89f5fa5ff7c530428d37
+        length: 2657
+        name: default_littleMaidMob.cfg
+      name: littleMaidMobX
+    - children:
+      - children: []
+        name: emblems
+      name: railcraft
+    - hash: 86f6e48acbb5b6a576e41fe5e25c2185bd8bdeee
+      length: 11262
+      name: "[F4\u5149\u7167\u63D0\u793A]LLOverlayReloaded-1.0.3-mc1.7.10.jar"
+    - hash: fb02bfc6079f229d7ec54d3a496106e4d7a9f10e
+      length: 221921
+      name: "[R\u952E\u6574\u7406]InventoryTweaks-1.58-147.jar"
+    - hash: 8cd18c39149e6ea46c58ad1e44d30f7742de8f2f
+      length: 4097363
+      name: "[\u4E2D\u4E16\u7EAA\u6751\u5E84]millenaire-6.0.0.jar"
+    - hash: 1c6aaf264264ef7aa7e6618b9f7f3f5916297cef
+      length: 2648657
+      name: "[\u4E9A\u56FE\u59C6]Atum-1.7.10-0.6.77.jar"
+    - hash: d769c0ccbcdc5a1ca878be3e2525a5a433854dc2
+      length: 435639
+      name: "[\u50A8\u7269\u62BD\u5C49]StorageDrawers-1.7.10-1.6.2.jar"
+    - hash: 21d4570536df2b8bb21ca410a65aee349703c560
+      length: 352780
+      name: "[\u5185\u7F6E\u5408\u6210\u8868]CraftGuide-1.6.8.2-forge[hukk\u6C49\u5316\
+        ].jar"
+    - hash: 62110dbd35a66970c1feca6ae1f794984f9f3352
+      length: 660651
+      name: "[\u5192\u9669\u5730\u7262]RoguelikeDungeons-1.11.2-1.6.6.jar"
+    - hash: 2d1ff3ce3c99f2334e1148836e4f95ce332dfc38
+      length: 97211
+      name: "[\u52A8\u6001\u5149\u6E90]DynamicLights-1.7.10.jar"
+    - hash: 56552968dc8df9a3ad0f909024d086f3748844dc
+      length: 202458
+      name: "[\u5320\u9B42]Mantle-1.7.10-0.3.2b.jar"
+    - hash: f41c91344ad8ed5de74b3bbba8c055594887785a
+      length: 5601409
+      name: "[\u5320\u9B42]TConstruct-1.7.10-1.8.8.jar"
+    - hash: 08977ef57a1cf010e506e9d60fbd35b26c62e6c4
+      length: 15602
+      name: "[\u5408\u6210\u51B2\u7A81\u6D88\u9664\u5668]NoMoreRecipeConflict-0.2(1.7.10).jar"
+    - hash: fdb6d2a54823b66ef4302cc262adac2d1c3485f7
+      length: 14031
+      name: "[\u5973\u4EC6-\u5973\u4EC6\u54E8\u5B50]MaidWhistle-1.7.10_0.2.jar"
+    - hash: 7c55a0e13584809e7ffd34dd5f3b19d552ca7b8a
+      length: 1073995
+      name: "[\u5973\u4EC6]littleMaidMobX-1.7.x_0.1.0.jar"
+    - hash: 076c7dc481191cd548cc5312477fd9fdd8861cc0
+      length: 1731968
+      name: "[\u5BB6\u5177]MrCrayfishFurnitureModv3.4.8(1.7.10).jar"
+    - hash: 5a9cdf069532b8dbd69825fe592189513bb6767c
+      length: 1009165
+      name: "[\u5DE5\u4E1A2\u5B9E\u9A8C\u7248-\u6838\u7535\u63A7\u52362]IC2NuclearControl-2.3.1a-Butt.jar"
+    - hash: 981f2179f65e716252266e94b9fe0ba5b4a7e82c
+      length: 417662
+      name: "[\u5DE5\u4E1A2\u5B9E\u9A8C\u7248-\u91CD\u529B\u88C5\u7532]GraviSuite-1.7.10-2.0.3.jar"
+    - hash: ca38d83a73fc57681b26bba307823c156d727214
+      length: 306464
+      name: "[\u5DE5\u4E1A2\u5B9E\u9A8C\u7248-\u9AD8\u7EA7\u592A\u9633\u80FD]AdvancedSolarPanel-1.7.10-3.5.1[TFCN].jar"
+    - hash: a69188a80d2b06d9b3caa992623cead51809450b
+      length: 5613961
+      name: "[\u5DE5\u4E1A2\u5B9E\u9A8C\u7248]industrialcraft-2-2.2.789-experimental.jar"
+    - hash: 7cebee1d108a571b79704c179368d63cadf3a8cc
+      length: 2526302
+      name: "[\u5E94\u7528\u80FD\u6E902]appliedenergistics2-rv2-stable-10.jar"
+    - hash: 69e792e87dd6f2b75cbba646d0f6bb53bca1d4c3
+      length: 257919
+      name: "[\u5EFA\u7B51-\u517C\u5BB9\u63D2\u4EF6]buildcraft-compat-7.1.2.jar"
+    - hash: b57ca9f7624af2d744338df5e29e06529cb069f9
+      length: 2769861
+      name: "[\u5EFA\u7B51]buildcraft-7.1.12.jar"
+    - hash: 09d396da13b15b9745f946b04b1744ce38ed6e2c
+      length: 116959
+      name: "[\u5FEB\u901F\u5DE5\u827A]fastcraft-1.21.jar"
+    - hash: 488dec9e04320bcacfd9200d31a34913730a633c
+      length: 239249
+      name: "[\u62D4\u5200\u5251-\u70ED\u529B\u81A8\u80C04-\u6751\u96E8]MurasamaBlade-mc1.7.2-r3.2.jar"
+    - hash: ad31514381f2812f019408a4722ea7d833275056
+      length: 252188
+      name: "[\u62D4\u5200\u5251-\u795E\u79D8\u65F6\u4EE34-\u98CE\u96F7\u592A\u5200\
+        ]SlashBlade_Zephyr-mc1.7.2-r1.2.2.jar"
+    - hash: ccbabf3c88c4eddf4d73f5f382e7e364c0ef9b95
+      length: 3027937
+      name: "[\u62D4\u5200\u5251]SlashBlade-mc1.7.10-r66.jar"
+    - hash: 0e2593f90098f3315e7c99f321a76fce7ecb36a5
+      length: 1542602
+      name: "[\u65C5\u884C\u5730\u56FE]journeymap-1.7.10-5.1.0-unlimited.jar"
+    - hash: aa6e77fad6816e34f9fb97af052f0afa4c19ec8d
+      length: 3663319
+      name: "[\u66AE\u8272\u68EE\u6797]twilightforest-1.7.10-2.3.7lucky_E\u6C49\u5316\
+        .jar"
+    - hash: 2888052ca2727a875ac13fa266e74b53e90cfab4
+      length: 158104
+      name: "[\u66F4\u591A\u7BB1\u5B50]ironchest-1.7.10-6.0.62.742-universal.jar"
+    - hash: f57abab3265c459352d30ad4923a6f1153b041cd
+      length: 3189437
+      name: "[\u6797\u4E1A]forestry_1.7.10-4.0.11.40.jar"
+    - hash: fcc879c5fd19aa17c0ec42260225abb165f2e422
+      length: 2576407
+      name: "[\u67AB\u6811][1.7.10]MapleTree Forge v1.1.31b.jar"
+    - hash: e07d277bbb736654bd14047ad8ea0644228a0518
+      length: 57644
+      name: "[\u6E38\u620F\u5185\u4FE1\u606F\u663E\u793A-\u6838\u5FC3]LunatriusCore-1.7.10-1.1.2.21-universal.jar"
+    - hash: 44c05208968aa9f83bb3ba4e5f090acdd2bc05e6
+      length: 330346
+      name: "[\u6E38\u620F\u5185\u4FE1\u606F\u663E\u793A]InGameInfoXML-1.7.10-2.8.1.82-universal.jar"
+    - hash: e0b439da52994250902a7110226f799ec9aa86a8
+      length: 1700669
+      name: "[\u70ED\u529B\u6838\u5FC3-\u6211\u7684\u5DE5\u53822]MineFactoryReloaded-[1.7.10]2.8.0-104.jar"
+    - hash: 0ea0863865fdbeee428240b986a15cb4dc1062af
+      length: 716293
+      name: "[\u70ED\u529B\u6838\u5FC3-\u672B\u5F71\u79D1\u6280]EnderTech-1.7.10-0.3.2.405.jar"
+    - hash: 941759bdf318e28f3346f104f84830fbd83a1cb4
+      length: 457072
+      name: "[\u70ED\u529B\u6838\u5FC3-\u70ED\u529B\u57FA\u7840-\u70ED\u529B\u7BA1\
+        \u9053]ThermalDynamics-[1.7.10]1.1.0-161.jar"
+    - hash: 3d84e933238bfaaaeb6434e68fcc0f1decb4109c
+      length: 2372337
+      name: "[\u70ED\u529B\u6838\u5FC3-\u70ED\u529B\u57FA\u7840-\u70ED\u529B\u81A8\
+        \u80C0]ThermalExpansion-[1.7.10]4.0.3B1-218.jar"
+    - hash: 3d8303051efdbe465e28f757697d7393059ec325
+      length: 2171829
+      name: "[\u70ED\u529B\u6838\u5FC3-\u70ED\u529B\u57FA\u7840]ThermalFoundation-[1.7.10]1.2.0-102.jar"
+    - hash: 001a5bebf2e23f13804e23f96dbfb942e633cb94
+      length: 1058656
+      name: "[\u70ED\u529B\u6838\u5FC3]CoFHCore-[1.7.10]3.0.3-303.jar"
+    - hash: 42340568aa6c7d6a9333e30540d4a9803d262f5d
+      length: 143985
+      name: "[\u7269\u54C1\u7BA1\u7406\u5668-\u6838\u5FC3]CodeChickenCore-1.7.10-1.0.7.48-universal.jar"
+    - hash: 1cad010865aa455cc5eafbffc4ef915ac4ab2ecc
+      length: 68794
+      name: "[\u7269\u54C1\u7BA1\u7406\u5668-\u795E\u79D8\u65F6\u4EE34\u63D2\u4EF6\
+        ]thaumcraftneiplugin-1.7.10-1.7a.jar"
+    - hash: caf51bb104d309bc8a51d4dffc621f48aaa9e0ce
+      length: 101777
+      name: "[\u7269\u54C1\u7BA1\u7406\u5668-\u901A\u7528\u63D2\u4EF6]neiaddons-1.12.14.40-mc1.7.10.jar"
+    - hash: 5bdc1ddafcf90cc49409da56d66f786366360f77
+      length: 145371
+      name: "[\u7269\u54C1\u7BA1\u7406\u5668-\u901A\u7528\u63D2\u4EF6]NEIIntegration-MC1.7.10-1.0.13.jar"
+    - hash: 86ce595ee48cb871a4b4399702674424d15c48e9
+      length: 219616
+      name: "[\u7269\u54C1\u7BA1\u7406\u5668-\u901A\u7528\u63D2\u4EF6]NotEnoughResources-1.7.10-0.1.0.106.jar"
+    - hash: a7587d48f19b6e9e8791c0e3d2e9aca3b36882c7
+      length: 513136
+      name: "[\u7269\u54C1\u7BA1\u7406\u5668]NotEnoughItems-1.7.10-1.0.5.120-universal.jar"
+    - hash: 19ef565c034e8ca5df3b9185aa53b67e97fa11de
+      length: 1460377
+      name: "[\u76D6\u4E9A\u9B54\u51783]GrimoireOfGaia3-1.7.10-1.2.7.jar"
+    - hash: 7505b945d79aa0f891745250eb95bd62562d121f
+      length: 65655
+      name: "[\u77FF\u7269\u8F9E\u5178\u8F6C\u6362]OreDictionaryConverter-1.6.1.jar"
+    - hash: b29e24d18d08e5063bde993385d4e8b9150711ba
+      length: 1221587
+      name: "[\u795E\u79D8\u65F6\u4EE34-\u5E94\u7528\u80FD\u6E902-\u795E\u79D8\u80FD\
+        \u6E90]thaumicenergistics-0.8.10.10.jar"
+    - hash: f761b31307c0eb5268334da7526998c3be25b9dc
+      length: 967430
+      name: "[\u795E\u79D8\u65F6\u4EE34-\u6797\u4E1A-\u9B54\u6CD5\u871C\u8702]magicbees-1.7.10-2.4.0.jar"
+    - hash: bae61f157cf8fe75d55bfed2aa30bdee4f52f2dd
+      length: 12531377
+      name: "[\u795E\u79D8\u65F6\u4EE34]Thaumcraft-1.7.10-4.2.3.5.jar"
+    - hash: 4e2ebddffec242da5e7803a843f47af96a38b57d
+      length: 1320814
+      name: "[\u7AF9]Bamboo-1.7.10-2.6.8.5-The_Xu.jar"
+    - hash: dd04431a847df637761dc78add0817de50ed9ee9
+      length: 173226
+      name: "[\u80CC\u5305]backpack-2.0.1-1.7.x.jar"
+    - hash: 7a47402dd67e2c8d465d06482be064fb492c4043
+      length: 349991
+      name: "[\u80FD\u91CF\u8F6C\u6362]PowerConverters-1.7.10_3.3.0-jenkins.76.jar"
+    - hash: db993787c5a512aca7a476bc5674ddfafcfaaa6b
+      length: 632186
+      name: "[\u82F9\u679C\u5976\u83362-\u65E5\u5F0F\u9644\u52A0]AddonforAMT-JP-1.7.10_1.2d.jar"
+    - hash: c454efda168d3b1fa5bff8c5e3edf9741618cffe
+      length: 100656
+      name: "[\u82F9\u679C\u5976\u83362-\u66F4\u591A\u5408\u6210\u914D\u65B9]MoreAMTRecipes-mc1.7.10-4.4.0.jar"
+    - hash: 350e470e1848cddddd52c9171a7fe488720eb577
+      length: 168481
+      name: "[\u82F9\u679C\u5976\u83362-\u6D41\u4F53\u98DF\u7269]FluidityFoodstuffs-1.7.10_1.3a.jar"
+    - hash: d2df40048951423c3c26f7282e8cd90c2d2ce327
+      length: 2789433
+      name: "[\u82F9\u679C\u5976\u83362]AppleMilkTea2-1.7.10_2.8j.jar"
+    - hash: 720fcf4177d057cb97d0a5214e0c90667b56f5d6
+      length: 646399
+      name: "[\u8840\u91CF\u663E\u793A]DamageIndicatorsMod-3.2.3.jar"
+    - hash: 6432526597a273fd7a1ce155bf70faef95a2f1d9
+      length: 1635021
+      name: "[\u8C46\u8150\u5DE5\u827A]TofuCraft-2.1.6-MC1.7.10.jar"
+    - hash: 9764a884065df77e79485aee58a7f27dcd1602b4
+      length: 16647
+      name: "[\u8F93\u5165\u4FEE\u6B63]InputFix-1.7.10-v5.jar"
+    - hash: 6da55151387a769ff2f54f5f197b116916f47436
+      length: 59151
+      name: "[\u901A\u7528\u5B57\u4F53\u4FEE\u590D]UnicodeFontFixer-1.1.12-mc1.7.10.jar"
+    - hash: ec020c4433ef3ee1607184fdbf0c4a32182aecd0
+      length: 69854
+      name: "[\u9AD8\u4EAE\u663E\u793A-\u6269\u5C55]Wawla-1.3.1-1.7.10.jar"
+    - hash: 7a874ee79a88cf66bd5355c8393069b3ac39c631
+      length: 544821
+      name: "[\u9AD8\u4EAE\u663E\u793A]Waila-1.5.10_1.7.10.jar"
+    - hash: db18fbf2b992ae0e9e3db92628eae22c09167944
+      length: 894979
+      name: "[\u9AD8\u6E05\u4FEE\u590D]OptiFine_1.7.10_HD_U_C1[hukk\u6C49\u5316].jar"
+    name: mods
+  name: .minecraft
+>>>>>>> 4a84ec4dc14896a62725186e253608a99d453830
