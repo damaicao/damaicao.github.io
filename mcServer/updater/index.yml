@@ -1,4 +1,0 @@
-update: 'res'
-common_mode:
-  - .minecraft/mods/*
-once_mode: []
