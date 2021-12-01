@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>学习 on Damaicao的博客</title>
+    <link>https://damaicao.github.io/tags/%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 学习 on Damaicao的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 01 Dec 2021 01:23:09 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/tags/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java学习路线</title>
+      <link>https://damaicao.github.io/post/java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</link>
+      <pubDate>Wed, 01 Dec 2021 01:23:09 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</guid>
+      <description>Java 学习路线  [Java 学习路线一条龙版 by 程序员鱼皮](liyupi/code-roadmap: 编程学习路线 (github.com))
+ 💂 + 💻 = 👴🏽
+大纲 image-20211127235325557
+路线特点  最新，完整一条龙的大厂 Java 学习路线，从入门到入土 同时适用于想全面学习 / 快速求职的同学，可以根据符号来定制自己的专属学习路线 给出目标、学习建议、关键知识点、最优资源以及各类资源推荐（视频、书籍、文档、项目、工具等） 鱼皮自己是 Java 开发者，融入个人自学和从业的经历 + 思考，让路线有灵魂 划分阶段、更有计划，且在最后给出持续学习的方向、探索 Java 程序员发展的无限可能 完全开源，回馈社区，持续更新！  符号表 可以通过路线知识点前的表情字符，根据自己的实际情况选择学习：
+ 🌕 所有同学必须学习！！！ 🌖 非常急着找工作，才可不学；目标大厂，必须学习！ 🌗 急着找工作的话，可不学；目标大厂，建议学习 🌘 时间充足的话，再去学 ⭐ 表示推荐资源  写在开头 首先呢，我们要了解 Java 的应用场景和就业方向，看看和自己的学习目的是否一致。
+目前，Java 由于其优秀的特性以及火爆的生态，岗位需求量大，是后台开发、安卓开发、大数据开发的主流编程语言，因此学习资源也很丰富，值得学习！
+有关更多编程语言的选择，大家可以看我的视频了解：https://www.bilibili.com/video/BV1y3411r7pX/
+阶段 0：前期准备  准备好一款在线、随时随地写代码的工具，不用在本地去安装和配置，是初学者的好帮手。  推荐网站 - 菜鸟工具：https://c.runoob.com/compile/10   准备一款记笔记的软件，学编程的过程中老师的思路、自己遇到的问题、解决问题的方法、心得感悟、遇到的好资料，都要记下来哦，好记性不如烂笔头，可以帮助你事半功倍。  推荐本地软件 Typora：https://www.</description>
+    </item>
+    
+    <item>
+      <title>前端学习路线</title>
+      <link>https://damaicao.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</link>
+      <pubDate>Wed, 01 Dec 2021 01:23:09 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</guid>
+      <description>前端学习路线  这份学习路线并不完美，也不会有最终形态，正如前端不可预见、永无止境的未来。[by 程序员鱼皮](liyupi/code-roadmap: 编程学习路线 (github.com))
+ 💂 + 💻 = 👴🏽
+大纲  前言 - 学编程需要的特质 前端学习七阶段  前端入门 巩固基础 前端工程化 前端优化 前端生态 前端求职 前端未来   尾声 - 持续学习 我的前端学习路线  前言 - 学编程需要的特质 相信自己有能力，那么你就真的会有！
+ 兴趣 坚持 付出 心态  一、前端入门 开发工具   VSCode
+  WebStorm
+  Atom
+  Sublime Text
+  HBuilder X
+  记事本
+  在线 IDE
+  HTML  基本语法  CSS  盒子模型 内联元素/块状元素 文档流 浮动 float 元素堆叠 块格式化上下文(BFC) 响应式布局 Flex 布局 Grid 布局 CSS 动画 瀑布流  JavaScript  基本语法 基本类型 Javascript 对象 原型和继承 作用域 闭包 this ES6+ 单线程与异步 Javascript DOM/BOM API  二、巩固基础 前端基础知识   互联网</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,63 @@
     <description>Recent content in Posts on Damaicao的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 26 Nov 2021 00:22:24 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Dec 2021 01:23:09 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java学习路线</title>
+      <link>https://damaicao.github.io/post/java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</link>
+      <pubDate>Wed, 01 Dec 2021 01:23:09 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</guid>
+      <description>Java 学习路线  [Java 学习路线一条龙版 by 程序员鱼皮](liyupi/code-roadmap: 编程学习路线 (github.com))
+ 💂 + 💻 = 👴🏽
+大纲 image-20211127235325557
+路线特点  最新，完整一条龙的大厂 Java 学习路线，从入门到入土 同时适用于想全面学习 / 快速求职的同学，可以根据符号来定制自己的专属学习路线 给出目标、学习建议、关键知识点、最优资源以及各类资源推荐（视频、书籍、文档、项目、工具等） 鱼皮自己是 Java 开发者，融入个人自学和从业的经历 + 思考，让路线有灵魂 划分阶段、更有计划，且在最后给出持续学习的方向、探索 Java 程序员发展的无限可能 完全开源，回馈社区，持续更新！  符号表 可以通过路线知识点前的表情字符，根据自己的实际情况选择学习：
+ 🌕 所有同学必须学习！！！ 🌖 非常急着找工作，才可不学；目标大厂，必须学习！ 🌗 急着找工作的话，可不学；目标大厂，建议学习 🌘 时间充足的话，再去学 ⭐ 表示推荐资源  写在开头 首先呢，我们要了解 Java 的应用场景和就业方向，看看和自己的学习目的是否一致。
+目前，Java 由于其优秀的特性以及火爆的生态，岗位需求量大，是后台开发、安卓开发、大数据开发的主流编程语言，因此学习资源也很丰富，值得学习！
+有关更多编程语言的选择，大家可以看我的视频了解：https://www.bilibili.com/video/BV1y3411r7pX/
+阶段 0：前期准备  准备好一款在线、随时随地写代码的工具，不用在本地去安装和配置，是初学者的好帮手。  推荐网站 - 菜鸟工具：https://c.runoob.com/compile/10   准备一款记笔记的软件，学编程的过程中老师的思路、自己遇到的问题、解决问题的方法、心得感悟、遇到的好资料，都要记下来哦，好记性不如烂笔头，可以帮助你事半功倍。  推荐本地软件 Typora：https://www.</description>
+    </item>
+    
+    <item>
+      <title>前端学习路线</title>
+      <link>https://damaicao.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</link>
+      <pubDate>Wed, 01 Dec 2021 01:23:09 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</guid>
+      <description>前端学习路线  这份学习路线并不完美，也不会有最终形态，正如前端不可预见、永无止境的未来。[by 程序员鱼皮](liyupi/code-roadmap: 编程学习路线 (github.com))
+ 💂 + 💻 = 👴🏽
+大纲  前言 - 学编程需要的特质 前端学习七阶段  前端入门 巩固基础 前端工程化 前端优化 前端生态 前端求职 前端未来   尾声 - 持续学习 我的前端学习路线  前言 - 学编程需要的特质 相信自己有能力，那么你就真的会有！
+ 兴趣 坚持 付出 心态  一、前端入门 开发工具   VSCode
+  WebStorm
+  Atom
+  Sublime Text
+  HBuilder X
+  记事本
+  在线 IDE
+  HTML  基本语法  CSS  盒子模型 内联元素/块状元素 文档流 浮动 float 元素堆叠 块格式化上下文(BFC) 响应式布局 Flex 布局 Grid 布局 CSS 动画 瀑布流  JavaScript  基本语法 基本类型 Javascript 对象 原型和继承 作用域 闭包 this ES6+ 单线程与异步 Javascript DOM/BOM API  二、巩固基础 前端基础知识   互联网</description>
+    </item>
+    
+    <item>
+      <title>Day02</title>
+      <link>https://damaicao.github.io/post/day02/</link>
+      <pubDate>Wed, 01 Dec 2021 01:21:44 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/day02/</guid>
+      <description>图片
+排序算法 排序也称排序算法 (Sort Algorithm) 是将一组数据，依指定的顺序进行排列的过程
+排序的分类
+ 内部排序:指将需要处理的所有数据都加载到 内部存储器 中进行排序。  外部排序法:数据量过大，无法全部加载到内存中，需要借助 外部存储 进行排序。  image-20211128000834503
+算法时间复杂度 度量一个程序(算法)执行时间的方法
+  事后统计法
+这种方法可行,但是有两个问题：一是要想对设计的算法的运行性能进行评测，需要 实际运行该程序；二是所得时间的统计量依赖于计算机的硬件、软件等环境因素,
+这种方式，要在同一台计算机的相同状态下运行，才能比较那个算法速度更快。
+  事前估算法
+通过分析某个算法的时间复杂度来判断哪个算法更优.
+  时间频度 时间频度：一个算法花费的时间与算法中语句的执行次数成正比例，哪个算法中语句执行次数多,它花费时间就多。一个算法中的语句执行次数称为语句频度或时间频度. 记为T(n)。[举例说明]
+ 忽略常数项, 低次项,系数  时间复杂度  一般情况下，算法中的基本操作语句的重复执行次数是问题规模n的某个函数，用T(n)表示，若有某个辅助函数f(n)，使得当n趋近于无穷大时，T(n)/f(n)的极限值为不等于零的常数，则称f(n)是T(n)的同数量级函数。记作 T(n)= O（f(n))，称O（f(n)）为算法的渐进时间复杂度，简称 时间复杂度 。  T(n)不同，但时间复杂度可能相同。如：T(n)=n2+7n+6与T(n)=3n2+2n+2它们的T(n)不同，但时间复杂度相同，都为O(n2)。 计算时间复杂度的方法： 用常数1代替运行时间中的所有加法常数 T(n)=n2+7n+6 =&amp;gt; T(n)=n2+7n+1 修改后的运行次数函数中，只保留最高阶项 去除最高阶项的系数  常见的时间复杂度 根据从小到大排列，常见的算法时间复杂度主要有：
+O(1) &amp;lt; O(log N) &amp;lt; O(N) &amp;lt; O(Nlog N) &amp;lt; O(N^2) &amp;lt; O(2^N) &amp;lt; O(N!</description>
+    </item>
+    
     <item>
       <title>写博客的第一天</title>
       <link>https://damaicao.github.io/post/%E6%96%B0%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/</link>
@@ -40,61 +96,6 @@
       
       <guid>https://damaicao.github.io/post/%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98/</guid>
       <description>经典算法  汉诺塔问题 =&amp;gt; 分治算法 八皇后问题 =&amp;gt; 回溯/分治算法 马踏棋盘问题 =&amp;gt; 图的深度优化遍历算法(DFS)+贪心算法优化  主题内容  稀疏数组和队列  稀疏数组 队列   链表  单链表 双向链表 单向环形链表   栈 递归  迷宫问题 八皇后   排序算法  内部 使用内存  插入  直接 间接   选择  简单选择 堆排序   交换  冒泡 快速   归并 基数(桶排序)   外部排序 使用内存和外存   查找算法  线性查找 二分查找 插值查找 斐波那契(黄金分割法)查找   哈希表 树  二叉树  顺序存储二叉树 线索化二叉树   堆排序 赫夫曼树 赫夫曼编码 二叉排序树 平衡二叉树(AVL树)   多路查找树  二叉树与B树 2-3树 B树,B+树,B*树   图  深度优先搜索   十大算法  二分查找 分治算法 动态规划算法 KMP算法 贪心算法 普利姆算法 克鲁斯卡尔算法 迪杰斯特拉算法 弗洛伊德算法 马踏棋盘算法    </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://damaicao.github.io/post/day02/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://damaicao.github.io/post/day02/</guid>
-      <description>排序算法 排序也称排序算法 (Sort Algorithm) 是将一组数据，依指定的顺序进行排列的过程
-排序的分类
- 内部排序:指将需要处理的所有数据都加载到 内部存储器 中进行排序。  外部排序法:数据量过大，无法全部加载到内存中，需要借助 外部存储 进行排序。  image-20211128000834503
-算法时间复杂度 度量一个程序(算法)执行时间的方法
-  事后统计法
-这种方法可行,但是有两个问题：一是要想对设计的算法的运行性能进行评测，需要 实际运行该程序；二是所得时间的统计量依赖于计算机的硬件、软件等环境因素,
-这种方式，要在同一台计算机的相同状态下运行，才能比较那个算法速度更快。
-  事前估算法
-通过分析某个算法的时间复杂度来判断哪个算法更优.
-  时间频度 时间频度：一个算法花费的时间与算法中语句的执行次数成正比例，哪个算法中语句执行次数多,它花费时间就多。一个算法中的语句执行次数称为语句频度或时间频度. 记为T(n)。[举例说明]
- 忽略常数项, 低次项,系数  时间复杂度  一般情况下，算法中的基本操作语句的重复执行次数是问题规模n的某个函数，用T(n)表示，若有某个辅助函数f(n)，使得当n趋近于无穷大时，T(n)/f(n)的极限值为不等于零的常数，则称f(n)是T(n)的同数量级函数。记作 T(n)= O（f(n))，称O（f(n)）为算法的渐进时间复杂度，简称 时间复杂度 。  T(n)不同，但时间复杂度可能相同。如：T(n)=n2+7n+6与T(n)=3n2+2n+2它们的T(n)不同，但时间复杂度相同，都为O(n2)。 计算时间复杂度的方法： 用常数1代替运行时间中的所有加法常数 T(n)=n2+7n+6 =&amp;gt; T(n)=n2+7n+1 修改后的运行次数函数中，只保留最高阶项 去除最高阶项的系数  常见的时间复杂度 根据从小到大排列，常见的算法时间复杂度主要有：
-O(1) &amp;lt; O(log N) &amp;lt; O(N) &amp;lt; O(Nlog N) &amp;lt; O(N^2) &amp;lt; O(2^N) &amp;lt; O(N!</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://damaicao.github.io/post/java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://damaicao.github.io/post/java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</guid>
-      <description>Java 学习路线  [Java 学习路线一条龙版 by 程序员鱼皮](liyupi/code-roadmap: 编程学习路线 (github.com))
- 💂 + 💻 = 👴🏽
-大纲 image-20211127235325557
-路线特点  最新，完整一条龙的大厂 Java 学习路线，从入门到入土 同时适用于想全面学习 / 快速求职的同学，可以根据符号来定制自己的专属学习路线 给出目标、学习建议、关键知识点、最优资源以及各类资源推荐（视频、书籍、文档、项目、工具等） 鱼皮自己是 Java 开发者，融入个人自学和从业的经历 + 思考，让路线有灵魂 划分阶段、更有计划，且在最后给出持续学习的方向、探索 Java 程序员发展的无限可能 完全开源，回馈社区，持续更新！  符号表 可以通过路线知识点前的表情字符，根据自己的实际情况选择学习：
- 🌕 所有同学必须学习！！！ 🌖 非常急着找工作，才可不学；目标大厂，必须学习！ 🌗 急着找工作的话，可不学；目标大厂，建议学习 🌘 时间充足的话，再去学 ⭐ 表示推荐资源  写在开头 首先呢，我们要了解 Java 的应用场景和就业方向，看看和自己的学习目的是否一致。
-目前，Java 由于其优秀的特性以及火爆的生态，岗位需求量大，是后台开发、安卓开发、大数据开发的主流编程语言，因此学习资源也很丰富，值得学习！
-有关更多编程语言的选择，大家可以看我的视频了解：https://www.bilibili.com/video/BV1y3411r7pX/
-阶段 0：前期准备  准备好一款在线、随时随地写代码的工具，不用在本地去安装和配置，是初学者的好帮手。  推荐网站 - 菜鸟工具：https://c.runoob.com/compile/10   准备一款记笔记的软件，学编程的过程中老师的思路、自己遇到的问题、解决问题的方法、心得感悟、遇到的好资料，都要记下来哦，好记性不如烂笔头，可以帮助你事半功倍。  推荐本地软件 Typora：https://www.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://damaicao.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://damaicao.github.io/post/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</guid>
-      <description>前端学习路线  这份学习路线并不完美，也不会有最终形态，正如前端不可预见、永无止境的未来。[by 程序员鱼皮](liyupi/code-roadmap: 编程学习路线 (github.com))
- 💂 + 💻 = 👴🏽
-大纲  前言 - 学编程需要的特质 前端学习七阶段  前端入门 巩固基础 前端工程化 前端优化 前端生态 前端求职 前端未来   尾声 - 持续学习 我的前端学习路线  前言 - 学编程需要的特质 相信自己有能力，那么你就真的会有！
- 兴趣 坚持 付出 心态  一、前端入门 开发工具   VSCode
-  WebStorm
-  Atom
-  Sublime Text
-  HBuilder X
-  记事本
-  在线 IDE
-  HTML  基本语法  CSS  盒子模型 内联元素/块状元素 文档流 浮动 float 元素堆叠 块格式化上下文(BFC) 响应式布局 Flex 布局 Grid 布局 CSS 动画 瀑布流  JavaScript  基本语法 基本类型 Javascript 对象 原型和继承 作用域 闭包 this ES6+ 单线程与异步 Javascript DOM/BOM API  二、巩固基础 前端基础知识   互联网</description>
     </item>
     
   </channel>

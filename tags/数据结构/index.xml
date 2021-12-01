@@ -6,7 +6,28 @@
     <description>Recent content in  数据结构 on Damaicao的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 26 Nov 2021 00:15:58 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Dec 2021 01:21:44 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day02</title>
+      <link>https://damaicao.github.io/post/day02/</link>
+      <pubDate>Wed, 01 Dec 2021 01:21:44 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/day02/</guid>
+      <description>图片
+排序算法 排序也称排序算法 (Sort Algorithm) 是将一组数据，依指定的顺序进行排列的过程
+排序的分类
+ 内部排序:指将需要处理的所有数据都加载到 内部存储器 中进行排序。  外部排序法:数据量过大，无法全部加载到内存中，需要借助 外部存储 进行排序。  image-20211128000834503
+算法时间复杂度 度量一个程序(算法)执行时间的方法
+  事后统计法
+这种方法可行,但是有两个问题：一是要想对设计的算法的运行性能进行评测，需要 实际运行该程序；二是所得时间的统计量依赖于计算机的硬件、软件等环境因素,
+这种方式，要在同一台计算机的相同状态下运行，才能比较那个算法速度更快。
+  事前估算法
+通过分析某个算法的时间复杂度来判断哪个算法更优.
+  时间频度 时间频度：一个算法花费的时间与算法中语句的执行次数成正比例，哪个算法中语句执行次数多,它花费时间就多。一个算法中的语句执行次数称为语句频度或时间频度. 记为T(n)。[举例说明]
+ 忽略常数项, 低次项,系数  时间复杂度  一般情况下，算法中的基本操作语句的重复执行次数是问题规模n的某个函数，用T(n)表示，若有某个辅助函数f(n)，使得当n趋近于无穷大时，T(n)/f(n)的极限值为不等于零的常数，则称f(n)是T(n)的同数量级函数。记作 T(n)= O（f(n))，称O（f(n)）为算法的渐进时间复杂度，简称 时间复杂度 。  T(n)不同，但时间复杂度可能相同。如：T(n)=n2+7n+6与T(n)=3n2+2n+2它们的T(n)不同，但时间复杂度相同，都为O(n2)。 计算时间复杂度的方法： 用常数1代替运行时间中的所有加法常数 T(n)=n2+7n+6 =&amp;gt; T(n)=n2+7n+1 修改后的运行次数函数中，只保留最高阶项 去除最高阶项的系数  常见的时间复杂度 根据从小到大排列，常见的算法时间复杂度主要有：
+O(1) &amp;lt; O(log N) &amp;lt; O(N) &amp;lt; O(Nlog N) &amp;lt; O(N^2) &amp;lt; O(2^N) &amp;lt; O(N!</description>
+    </item>
+    
     <item>
       <title>Day01</title>
       <link>https://damaicao.github.io/post/day01/</link>
