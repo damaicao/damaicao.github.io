@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on Damaicao的博客</title>
+    <link>https://damaicao.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on Damaicao的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 11 Jan 2022 23:02:23 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>十大算法</title>
+      <link>https://damaicao.github.io/post/%E5%8D%81%E5%A4%A7%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 11 Jan 2022 23:02:23 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/%E5%8D%81%E5%A4%A7%E7%AE%97%E6%B3%95/</guid>
+      <description>算法 二分查找  二分查找法只适用于从有序的数列中进行查找(比如数字和字母等)，将数列排序后再进行查找 二分查找法的运行时间为对数时间o(log2n)，即查找到需要的目标位置最多只需要log2n步，假设从[0,99]的队列(100个数，即n=100)中寻到目标数30，则需要查找步数为log2100，即最多需要查找7次(2^6&amp;lt;100 &amp;lt;2^7)  int left = 0; int right = arr.length - 1; while(left &amp;lt;= right){ int mid = (left + right) / 2; if (arr[mid] == target){ return arr[mid]; } else if (arr[mid] &amp;gt; target){ right = mid - 1; } else{ left = mid + 1; } } return -1; 分治算法   分治法是一种很重要的算法。字面上的解释是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题&amp;hellip;.直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个技巧是很多高效算法的基础，如排序算法(快速排序，归并排序)，傅立叶变换(快速傅立叶变换)&amp;hellip;.
+  分治算法可以求解的一些经典问题
+ 二分搜索 大整数乘法 棋盘覆盖 合并排序 快速排序 线性时间选择 最接近点对问题 循环赛日程表 汉诺塔    基本步骤</description>
+    </item>
+    
+    <item>
+      <title>查找算法</title>
+      <link>https://damaicao.github.io/post/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sun, 02 Jan 2022 19:16:57 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/</guid>
+      <description>查找算法 介绍  顺序(线性)查找 二分查找/折半查找 插值查找 斐波那契查找  线性查找 for (int i = 0; i &amp;lt; arr.length; i++) { if (arr[i] == value) { return i; } } return -1; 二分查找 返回目标索引
+// if left &amp;gt; right == not find  if (left &amp;gt; right){ return -1; } int mid = (left + right) / 2; int midVal = arr[mid]; if (findVal &amp;gt; midVal){ return binarySearch(arr, mid+1 , right, findVal); } else if (findVal &amp;lt; midVal){ return binarySearch(arr, left, mid-1, findVal); } else{ return mid; } 返回所有目标索引</description>
+    </item>
+    
+  </channel>
+</rss>

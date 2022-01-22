@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring框架 on Damaicao的博客</title>
+    <link>https://damaicao.github.io/tags/spring%E6%A1%86%E6%9E%B6/</link>
+    <description>Recent content in Spring框架 on Damaicao的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 21 Jan 2022 15:31:42 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/tags/spring%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring5新功能</title>
+      <link>https://damaicao.github.io/post/spring5%E6%96%B0%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Fri, 21 Jan 2022 15:31:42 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/spring5%E6%96%B0%E5%8A%9F%E8%83%BD/</guid>
+      <description>Spring5新功能 整个 Spring5 框架的代码基于 Java8，运行时兼容 JDK9
+Spring 5.0 框架自带了通用的日志封装 Spring5 已经移除 Log4jConfigListener，官方建议使用 Log4j2
+Spring5 框架整合 Log4j2(漏洞)
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!--日志级别以及优先级排序: OFF &amp;gt; FATAL &amp;gt; ERROR &amp;gt; WARN &amp;gt; INFO &amp;gt; DEBUG &amp;gt; TRACE &amp;gt; ALL --&amp;gt; &amp;lt;!--Configuration 后面的 status 用于设置 log4j2 自身内部的信息输出，可以不设置，当设置成 trace 时，可以看到 log4j2 内部各种详细输出--&amp;gt; &amp;lt;configuration status=&amp;#34;INFO&amp;#34;&amp;gt; &amp;lt;!--先定义所有的 appender--&amp;gt; &amp;lt;appenders&amp;gt; &amp;lt;!--输出日志信息到控制台--&amp;gt; &amp;lt;console name=&amp;#34;Console&amp;#34; target=&amp;#34;SYSTEM_OUT&amp;#34;&amp;gt; &amp;lt;!--控制日志输出的格式--&amp;gt; &amp;lt;PatternLayout pattern=&amp;#34;%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&amp;#34;/&amp;gt; &amp;lt;/console&amp;gt; &amp;lt;/appenders&amp;gt; &amp;lt;!--然后定义 logger，只有定义 logger 并引入的 appender，appender 才会生效!</description>
+    </item>
+    
+    <item>
+      <title>Spring事务操作</title>
+      <link>https://damaicao.github.io/post/spring5%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Thu, 20 Jan 2022 20:51:47 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/spring5%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C/</guid>
+      <description>事务操作 事务概念 什么是事务 事务是数据库操作最基本单元，逻辑上一组操作，要么都成功，如果有一个失败所有操 作都失败
+事务四个特性 - ACID   原子性：
+事务包含要执行的所有操作要么全部成功，要么全部失败，进行回滚（回滚就是将所有操作还原）。因此事务的操作若成功了就一定对数据库做了改变，若操作失败则不能对数据库有任何影响。
+  一致性：
+指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。
+拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性。
+  隔离性：
+隔离性是为了保证每一个用户在开启并使用事务时，不被其他事务操作所干扰，保持独立的工作不受外界干扰，主要就是防止多个用户对数据库同一张表的访问操作。例如：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行.
+  持久性：
+比如一个事务一旦提交以后，那么对数据库表的操作改变就是永久的（比如删除了表中一条记录就永久删除了），即便是数据库系统遇到故障异常情况事务操作仍然会产生改变。
+  模拟事务操作环境 try { //第一步 开启事务  //第二步 进行业务操作  userDao.reduceMoney();//lucy 少 100  int x=10/0; userDao.addMoney(); //mary 多 100  //第三步 没有发生异常，提交事务 } catch (Exception e){ //第四步 出现异常，事务回滚  } Spring 事务管理介绍   事务添加到 JavaEE 三层结构里面 Service 层（业务逻辑层）
+  在 Spring 进行事务管理操作 ；两种方式：编程式事务管理、声明式事务管理（推荐使用）</description>
+    </item>
+    
+    <item>
+      <title>JdbcTemplate</title>
+      <link>https://damaicao.github.io/post/jdbctemplate/</link>
+      <pubDate>Thu, 20 Jan 2022 17:03:51 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/jdbctemplate/</guid>
+      <description>Spring JdbcTemplate详解 - 知乎 (zhihu.com)
+JdbcTemplate Spring 框架对 JDBC 进行封装，使用 JdbcTemplate 方便实现对数据库操作
+在 spring 配置文件配置数据库连接池 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;beans xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns:context=&amp;#34;http://www.springframework.org/schema/context&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&amp;#34;&amp;gt; &amp;lt;context:component-scan base-package=&amp;#34;spring5&amp;#34;&amp;gt;&amp;lt;/context:component-scan&amp;gt; &amp;lt;context:property-placeholder location=&amp;#34;classpath:jdbc.properties&amp;#34;/&amp;gt; &amp;lt;bean id=&amp;#34;dataSource&amp;#34; class=&amp;#34;com.alibaba.druid.pool.DruidDataSource&amp;#34; destroy-method=&amp;#34;close&amp;#34;&amp;gt; &amp;lt;property name=&amp;#34;driverClassName&amp;#34; value=&amp;#34;${prop.driverClass}&amp;#34;/&amp;gt; &amp;lt;property name=&amp;#34;url&amp;#34; value=&amp;#34;${prop.url}&amp;#34;/&amp;gt; &amp;lt;property name=&amp;#34;username&amp;#34; value=&amp;#34;${prop.userName}&amp;#34;/&amp;gt; &amp;lt;property name=&amp;#34;password&amp;#34; value=&amp;#34;${prop.password}&amp;#34;/&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;bean id=&amp;#34;jdbcTemplate&amp;#34; class=&amp;#34;org.springframework.jdbc.core.JdbcTemplate&amp;#34;&amp;gt; &amp;lt;property name=&amp;#34;dataSource&amp;#34; ref=&amp;#34;dataSource&amp;#34;&amp;gt;&amp;lt;/property&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;/beans&amp;gt; prop.driverClass=com.mysql.cj.jdbc.Driver prop.url=jdbc:mysql://localhost:3306/user_db?serverTimezone=UTC&amp;amp;characterEncoding=UTF-8 prop.userName=root prop.password=root 创建 service 类，创建 dao 类，在 dao 注入 jdbcTemplate 对象 //service @Service public class BookService { @Autowired private BookDao bookDao; } //dao实现类 @Repository public class BookDaoImpl implements BookDao { @Autowired private JdbcTemplate jdbcTemplate; } JdbcTemplate 操作数据库 添加 //实现类 @Override public void add(Book book) { String sql = &amp;#34;insert into t_book values(?</description>
+    </item>
+    
+    <item>
+      <title>Aop</title>
+      <link>https://damaicao.github.io/post/aop/</link>
+      <pubDate>Wed, 19 Jan 2022 12:07:44 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/aop/</guid>
+      <description>本文参考了 : Spring AOP——Spring 中面向切面编程 - SharpCJ - 博客园 (cnblogs.com)
+AOP基本概念  面向切面编程（方面），利用 AOP 可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。 通俗描述：不通过修改源代码方式，在主干功能里面添加新功能 AOP 要达到的效果是，保证开发者不修改源代码的前提下，去为系统中的业务组件添加某种通用功能。  AOP底层原理 AOP 底层使用动态代理 ，动态代理有两种情况：
+  有接口情况，使用 JDK 动态代理 ；创建接口实现类代理对象，增强类的方法
+静态 AOP 实现， AOP 框架在编译阶段对程序源代码进行修改，生成了静态的 AOP 代理类（生成的 *.class 文件已经被改掉了，需要使用特定的编译器），比如 AspectJ。
+  没有接口情况，使用 CGLIB 动态代理；创建子类的代理对象，增强类的方法
+动态 AOP 实现， AOP 框架在运行阶段对动态生成代理对象（在内存中以 JDK 动态代理，或 CGlib 动态地生成 AOP 代理类），如 SpringAOP。
+  常用 AOP 实现比较
+AOP的JDK 动态代理 使用 JDK 动态代理，使用 Proxy 类里面的方法创建代理对象</description>
+    </item>
+    
+    <item>
+      <title>IOC容器</title>
+      <link>https://damaicao.github.io/post/ioc%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Sun, 16 Jan 2022 19:35:55 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/ioc%E5%AE%B9%E5%99%A8/</guid>
+      <description>一、IOC容器 IOC容器 什么是IOC  控制反转,把对象创建和对象之间的调用过程，交给Spring进行管理 使用IOC目的：为了降低耦合度  IOC底层原理 xml解析、工厂模式、反射
+Spring提供的IOC容器实现的两种方式（两个接口） BeanFactory接口：IOC容器基本实现是Spring内部接口的使用接口，不提供给开发人员进行使用
+（加载配置文件时候不会创建对象，在获取对象时才会创建对象。)
+采取的懒加载的方式,在获取对象时才会实例化
+Spring源码解析：BeanFactory深入理解_FromNowOnUntilTheEnd-CSDN博客_beanfactory
+ApplicationContext接口：BeanFactory接口的子接口，提供更多更强大的功能，提供给开发人员使用
+（加载配置文件时候就会把在配置文件对象进行创建.)
+在工厂初始化时立即实例化对象
+Spring核心讲解篇——ApplicationContext - 知乎 (zhihu.com)
+ApplicationContext接口的实现类 二、IOC容器-Bean管理 Spring Bean管理 - CoderJerry - 博客园 (cnblogs.com)
+1.IOC操作Bean管理 指两个操作
+ Spring创建对象 Spring注入属性  2.Bean管理操作的两种方式 3.基于xml配置文件方式实现   在spring配置文件中使用bean标签
+  &amp;lt;bean id=&amp;quot;user&amp;quot; class=&amp;quot;spring5.User&amp;quot;&amp;gt;&amp;lt;/bean&amp;gt;     属性介绍
+ id:标识名 class:类全路径    创建对象时候，默认也是执行无参数构造方法完成对象创建
+  4.基于XML方式注入属性 DI：依赖注入(注入属性)
+1. set方式注入   在类里面set
+  &amp;lt;bean id=&amp;#34;book&amp;#34; class=&amp;#34;spring5.</description>
+    </item>
+    
+    <item>
+      <title>Spring框架简述</title>
+      <link>https://damaicao.github.io/post/spring%E6%A1%86%E6%9E%B6%E7%AE%80%E8%BF%B0/</link>
+      <pubDate>Sun, 16 Jan 2022 16:47:27 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/spring%E6%A1%86%E6%9E%B6%E7%AE%80%E8%BF%B0/</guid>
+      <description>一、什么是Spring？ 1、什么是spring?（面试题） Spring是一个开源的Java EE开发框架。Spring框架的核心功能可以应用在任何Java应用程序中，但对Java EE平台上的Web应用程序有更好的扩展性。Spring框架的目标是使得Java EE应用程序的开发更加简捷，通过使用POJO为基础的编程模型促进良好的编程风格。
+  Spring是轻量级的开源的JavaEE框架
+  Spring可以解决企业应用开发的复杂性。
+  Spring有两个核心部分:IOC和Aop
+  IOC:控制反转,把创建对象过程交给Spring进行管理)
+  Aop:面向切面,不修改源代码进行功能增强
+    Spring特点
+ 方便解耦，简化开发 Aop编程支持 方便程序测试 方便和其他框架进行整合; 方便进行事务操作, 降低API开发难度·    spring下载地址</description>
+    </item>
+    
+  </channel>
+</rss>

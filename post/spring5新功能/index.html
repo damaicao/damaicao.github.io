@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Spring5新功能 整个 Spring5 框架的代码基于 Java8，运行时兼容 JDK9
+Spring 5.0 框架自带了通用的日志封装 Spring5 已经移除 Log4jConfigListener，官方建议使用 Log4j2
+Spring5 框架整合 Log4j2(漏洞)
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!--日志级别以及优先级排序: OFF &amp;gt; FATAL &amp;gt; ERROR &amp;gt; WARN &amp;gt; INFO &amp;gt; DEBUG &amp;gt; TRACE &amp;gt; ALL --&amp;gt; &amp;lt;!--Configuration 后面的 status 用于设置 log4j2 自身内部的信息输出，可以不设置，当设置成 trace 时，可以看到 log4j2 内部各种详细输出--&amp;gt; &amp;lt;configuration status=&amp;#34;INFO&amp;#34;&amp;gt; &amp;lt;!--先定义所有的 appender--&amp;gt; &amp;lt;appenders&amp;gt; &amp;lt;!--输出日志信息到控制台--&amp;gt; &amp;lt;console name=&amp;#34;Console&amp;#34; target=&amp;#34;SYSTEM_OUT&amp;#34;&amp;gt; &amp;lt;!--控制日志输出的格式--&amp;gt; &amp;lt;PatternLayout pattern=&amp;#34;%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&amp;#34;/&amp;gt; &amp;lt;/console&amp;gt; &amp;lt;/appenders&amp;gt; &amp;lt;!--然后定义 logger，只有定义 logger 并引入的 appender，appender 才会生效!'><title>Spring5新功能</title>
+
+<link rel='canonical' href='https://damaicao.github.io/post/spring5%E6%96%B0%E5%8A%9F%E8%83%BD/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Spring5新功能'>
+<meta property='og:description' content='Spring5新功能 整个 Spring5 框架的代码基于 Java8，运行时兼容 JDK9
+Spring 5.0 框架自带了通用的日志封装 Spring5 已经移除 Log4jConfigListener，官方建议使用 Log4j2
+Spring5 框架整合 Log4j2(漏洞)
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!--日志级别以及优先级排序: OFF &amp;gt; FATAL &amp;gt; ERROR &amp;gt; WARN &amp;gt; INFO &amp;gt; DEBUG &amp;gt; TRACE &amp;gt; ALL --&amp;gt; &amp;lt;!--Configuration 后面的 status 用于设置 log4j2 自身内部的信息输出，可以不设置，当设置成 trace 时，可以看到 log4j2 内部各种详细输出--&amp;gt; &amp;lt;configuration status=&amp;#34;INFO&amp;#34;&amp;gt; &amp;lt;!--先定义所有的 appender--&amp;gt; &amp;lt;appenders&amp;gt; &amp;lt;!--输出日志信息到控制台--&amp;gt; &amp;lt;console name=&amp;#34;Console&amp;#34; target=&amp;#34;SYSTEM_OUT&amp;#34;&amp;gt; &amp;lt;!--控制日志输出的格式--&amp;gt; &amp;lt;PatternLayout pattern=&amp;#34;%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&amp;#34;/&amp;gt; &amp;lt;/console&amp;gt; &amp;lt;/appenders&amp;gt; &amp;lt;!--然后定义 logger，只有定义 logger 并引入的 appender，appender 才会生效!'>
+<meta property='og:url' content='https://damaicao.github.io/post/spring5%E6%96%B0%E5%8A%9F%E8%83%BD/'>
+<meta property='og:site_name' content='Damaicao的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Spring框架' /><meta property='article:published_time' content='2022-01-21T15:31:42&#43;08:00'/><meta property='article:modified_time' content='2022-01-21T15:31:42&#43;08:00'/>
+<meta name="twitter:title" content="Spring5新功能">
+<meta name="twitter:description" content="Spring5新功能 整个 Spring5 框架的代码基于 Java8，运行时兼容 JDK9
+Spring 5.0 框架自带了通用的日志封装 Spring5 已经移除 Log4jConfigListener，官方建议使用 Log4j2
+Spring5 框架整合 Log4j2(漏洞)
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!--日志级别以及优先级排序: OFF &amp;gt; FATAL &amp;gt; ERROR &amp;gt; WARN &amp;gt; INFO &amp;gt; DEBUG &amp;gt; TRACE &amp;gt; ALL --&amp;gt; &amp;lt;!--Configuration 后面的 status 用于设置 log4j2 自身内部的信息输出，可以不设置，当设置成 trace 时，可以看到 log4j2 内部各种详细输出--&amp;gt; &amp;lt;configuration status=&amp;#34;INFO&amp;#34;&amp;gt; &amp;lt;!--先定义所有的 appender--&amp;gt; &amp;lt;appenders&amp;gt; &amp;lt;!--输出日志信息到控制台--&amp;gt; &amp;lt;console name=&amp;#34;Console&amp;#34; target=&amp;#34;SYSTEM_OUT&amp;#34;&amp;gt; &amp;lt;!--控制日志输出的格式--&amp;gt; &amp;lt;PatternLayout pattern=&amp;#34;%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&amp;#34;/&amp;gt; &amp;lt;/console&amp;gt; &amp;lt;/appenders&amp;gt; &amp;lt;!--然后定义 logger，只有定义 logger 并引入的 appender，appender 才会生效!">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>返回</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/post/spring5%E6%96%B0%E5%8A%9F%E8%83%BD/">Spring5新功能</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 21, 2022</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="spring5新功能">Spring5新功能</h1>
+<p>整个 Spring5 框架的代码基于 Java8，运行时兼容 JDK9</p>
+<h2 id="spring-50-框架自带了通用的日志封装">Spring 5.0 框架自带了通用的日志封装</h2>
+<p>Spring5 已经移除 Log4jConfigListener，官方建议使用 Log4j2</p>
+<p>Spring5 框架整合 Log4j2(漏洞)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style="color:#75715e">&lt;!--日志级别以及优先级排序: OFF &gt; FATAL &gt; ERROR &gt; WARN &gt; INFO &gt; DEBUG &gt; TRACE &gt; ALL --&gt;</span>
+<span style="color:#75715e">&lt;!--Configuration 后面的 status 用于设置 log4j2 自身内部的信息输出，可以不设置，当设置成 trace 时，可以看到 log4j2 内部各种详细输出--&gt;</span>
+<span style="color:#f92672">&lt;configuration</span> <span style="color:#a6e22e">status=</span><span style="color:#e6db74">&#34;INFO&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#75715e">&lt;!--先定义所有的 appender--&gt;</span>
+    <span style="color:#f92672">&lt;appenders&gt;</span>
+        <span style="color:#75715e">&lt;!--输出日志信息到控制台--&gt;</span>
+        <span style="color:#f92672">&lt;console</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Console&#34;</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;SYSTEM_OUT&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#75715e">&lt;!--控制日志输出的格式--&gt;</span>
+            <span style="color:#f92672">&lt;PatternLayout</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/console&gt;</span>
+    <span style="color:#f92672">&lt;/appenders&gt;</span>
+
+    <span style="color:#75715e">&lt;!--然后定义 logger，只有定义 logger 并引入的 appender，appender 才会生效!--&gt;</span>
+    <span style="color:#75715e">&lt;!--root：用于指定项目的根日志，如果没有单独指定 Logger，则会使用 root 作为默认的日志输出--&gt;</span>
+    <span style="color:#f92672">&lt;loggers&gt;</span>
+        <span style="color:#f92672">&lt;root</span> <span style="color:#a6e22e">level=</span><span style="color:#e6db74">&#34;info&#34;</span><span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;appender-ref</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;Console&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/root&gt;</span>
+    <span style="color:#f92672">&lt;/loggers&gt;</span>
+<span style="color:#f92672">&lt;/configuration&gt;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Logger log <span style="color:#f92672">=</span> LoggerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>UserLog<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    log<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello log4j2&#34;</span><span style="color:#f92672">);</span>
+    log<span style="color:#f92672">.</span><span style="color:#a6e22e">warn</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;hello log4j&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="spring5-框架核心容器支持nullable-注解">Spring5 框架核心容器支持@Nullable 注解</h2>
+<p>@Nullable 注解可以使用在方法、属性、参数上面，</p>
+<p>在方法上注解,表示方法返回可以为空，</p>
+<p>在属性上注解,表示属性值可以为空，</p>
+<p>在参数值旁边注解,参数值可以为空</p>
+<h2 id="spring5-核心容器支持函数式风格-genericapplicationcontext">Spring5 核心容器支持函数式风格 GenericApplicationContext</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">getGenericApplicationContext</span><span style="color:#f92672">(){</span>
+    GenericApplicationContext context <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> GenericApplicationContext<span style="color:#f92672">();</span>
+    调用 context 的方法对象注册
+    context<span style="color:#f92672">.</span><span style="color:#a6e22e">refresh</span><span style="color:#f92672">();</span>
+    <span style="color:#75715e">// context.registerBean(User.class, User::new);
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// User user = (User) context.getBean(&#34;spring5.test.User&#34;);
+</span><span style="color:#75715e"></span>    context<span style="color:#f92672">.</span><span style="color:#a6e22e">registerBean</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user1&#34;</span><span style="color:#f92672">,</span> User<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> User<span style="color:#f92672">::</span><span style="color:#66d9ef">new</span><span style="color:#f92672">);</span>
+    User user <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>User<span style="color:#f92672">)</span> context<span style="color:#f92672">.</span><span style="color:#a6e22e">getBean</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user1&#34;</span><span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>user<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="junit5单元测试框架">JUnit5单元测试框架</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//JUnit4
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@RunWith</span><span style="color:#f92672">(</span>SpringJUnit4ClassRunner<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@ContextConfiguration</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;classpath:bean1.xml&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JTest4</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Autowired</span>
+    <span style="color:#66d9ef">private</span> UserService userService<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test1</span><span style="color:#f92672">(){</span>
+        userService<span style="color:#f92672">.</span><span style="color:#a6e22e">accountMoney</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//JUint5
+</span><span style="color:#75715e">//@ExtendWith(SpringExtension.class)
+</span><span style="color:#75715e">//@Configuration(&#34;classpath:bean1.xml&#34;)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@SpringJUnitConfig</span><span style="color:#f92672">(</span>locations <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;classpath:bean1.xml&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JTest5</span> <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Autowired</span>
+    <span style="color:#66d9ef">private</span> UserService userService<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test1</span><span style="color:#f92672">(){</span>
+        userService<span style="color:#f92672">.</span><span style="color:#a6e22e">accountMoney</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h1 id="spring5-框架新功能webflux类似于springmvc">Spring5 框架新功能——Webflux（类似于springMVC）</h1>
+<p>Webflux是 Spring5 添加新的模块，用于 web 开发的，功能和 SpringMVC 类似的，Webflux 使用 当前一种比较流行的响应式编程出现的框架。</p>
+<p>使用传统 web 框架，比如 SpringMVC，这些基于 Servlet 容器，Webflux 是一种异步非阻塞的框架，异步非阻塞的框架在 Servlet3.1 以后才支持，核心是基于 Reactor 的相关 API 实现的。</p>
+<blockquote>
+<p>解释什么是异步非阻塞 ：</p>
+<p><strong>异步和同步</strong> （针对调用者）</p>
+<p>同步： 调用者发送请求，如果等着对方回应之后才去做其他事情就是同步</p>
+<p>异步： 调用者发送请求，如果发送请求之后不等着对方回应就去做其他事情就是异步 √</p>
+<p><strong>非阻塞和阻塞</strong> （针对被调用者）</p>
+<p>阻塞： 被调用者受到请求之后，做完请求任务之后才给出反馈就是阻塞</p>
+<p>非阻塞： 被调用者受到请求之后，受到请求之后马上给出反馈然后再去做事情就是非阻塞 √</p>
+</blockquote>
+<p>Webflux特点</p>
+<ol>
+<li><strong>非阻塞式</strong>：在有限资源下，提高系统吞吐量和伸缩性，以 Reactor 为基础实现响应式编程</li>
+<li><strong>函数式编程</strong>：Spring5 框架基于 java8，Webflux 使用 Java8 函数式编程方式实现路由请求</li>
+</ol>
+<p>SpringMVC和Webflux之间区别</p>
+<p>相同：两个框架都可以使用注解方式，都运行在 Tomcat 等容器中</p>
+<p>不同：SpringMVC 采用命令式编程，Webflux 采用异步响应式编程</p>
+<h2 id="响应式编程java-实现">响应式编程（Java 实现）</h2>
+<blockquote>
+<p>概念：什么是响应式编程 响应式编程是一种面向数据流和变化传播的编程范式。这意味着可以在编程语言中很方便 地表达静态或动态的数据流，而相关的计算模型会自动将变化的值通过数据流进行传播。</p>
+<p>例子：电子表格程序就是响应式编程的一个例子。单元格可以包含字面值或类似&quot;=B1+C1&quot;的公 式，而包含公式的单元格的值会依据其他单元格的值的变化而变化。</p>
+</blockquote>
+<p>Java8 及其之前版本是提供的观察者模式两个类 Observer 和 Observable实现</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ObserverDemo</span> <span style="color:#66d9ef">extends</span> Observable <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        ObserverDemo observer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObserverDemo<span style="color:#f92672">();</span>
+        observer<span style="color:#f92672">.</span><span style="color:#a6e22e">addObserver</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Observer<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>Observable o<span style="color:#f92672">,</span> Object arg<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;发生变化&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">});</span>
+
+        observer<span style="color:#f92672">.</span><span style="color:#a6e22e">addObserver</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Observer<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update</span><span style="color:#f92672">(</span>Observable o<span style="color:#f92672">,</span> Object arg<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;准备变化&#34;</span><span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">});</span>
+
+        observer<span style="color:#f92672">.</span><span style="color:#a6e22e">setChanged</span><span style="color:#f92672">();</span> <span style="color:#75715e">//数据变化
+</span><span style="color:#75715e"></span>        observer<span style="color:#f92672">.</span><span style="color:#a6e22e">notifyObservers</span><span style="color:#f92672">();</span> <span style="color:#75715e">//通知
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="响应式编程reactor-实现">响应式编程（Reactor 实现）</h2>
+<p>响应式编程操作中，Reactor 是满足 Reactive 规范框架</p>
+<p>Reactor 有两个核心类，Mono 和 Flux，这两个类实现接口 Publisher，提供丰富操作符。Flux 对象实现发布者，返回 N 个元素；Mono 实现发布者，返回 0 或者 1 个元素</p>
+<p>Flux 和 Mono 都是数据流的发布者，使用 Flux 和 Mono 都可以发出三种数据信号： 元素值，错误信号，完成信号，错误信号和完成信号都代表终止信号，终止信号用于告诉 订阅者数据流结束了，错误信号终止数据流同时把错误信息传递给订阅者</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--第一步 引入依赖--&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+ <span style="color:#f92672">&lt;groupId&gt;</span>io.projectreactor<span style="color:#f92672">&lt;/groupId&gt;</span>
+ <span style="color:#f92672">&lt;artifactId&gt;</span>reactor-core<span style="color:#f92672">&lt;/artifactId&gt;</span>
+ <span style="color:#f92672">&lt;version&gt;</span>3.1.5.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//第二步 编程代码
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">//just 方法直接声明
+</span><span style="color:#75715e"></span>    Flux<span style="color:#f92672">.</span><span style="color:#a6e22e">just</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>3<span style="color:#f92672">,</span>4<span style="color:#f92672">);</span>
+    Mono<span style="color:#f92672">.</span><span style="color:#a6e22e">just</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+    <span style="color:#75715e">//其他的方法
+</span><span style="color:#75715e"></span>    Integer<span style="color:#f92672">[]</span> array <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>1<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>3<span style="color:#f92672">,</span>4<span style="color:#f92672">};</span>
+    Flux<span style="color:#f92672">.</span><span style="color:#a6e22e">fromArray</span><span style="color:#f92672">(</span>array<span style="color:#f92672">);</span>
+
+    List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>array<span style="color:#f92672">);</span>
+    Flux<span style="color:#f92672">.</span><span style="color:#a6e22e">fromIterable</span><span style="color:#f92672">(</span>list<span style="color:#f92672">);</span>
+    Stream<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> stream <span style="color:#f92672">=</span> list<span style="color:#f92672">.</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">();</span>
+    Flux<span style="color:#f92672">.</span><span style="color:#a6e22e">fromStream</span><span style="color:#f92672">(</span>stream<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>三种信号特点</p>
+<p>① 错误信号和完成信号都是终止信号，不能共存的</p>
+<p>② 如果没有发送任何元素值，而是直接发送错误或者完成信号，表示是空数据流</p>
+<p>③ 如果没有错误信号，没有完成信号，表示是无限数据流</p>
+<p>调用 just 或者其他方法只是声明数据流，数据流并没有发出，只有进行订阅之后才会触发数据流，不订阅什么都不会发生的！！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> <span style="color:#f92672">*</span><span style="color:#75715e">//just方法声明后,进行订阅*        
+</span><span style="color:#75715e"></span>    Flux<span style="color:#f92672">.</span><span style="color:#a6e22e">just</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span>2<span style="color:#f92672">,</span>3<span style="color:#f92672">,</span>4<span style="color:#f92672">).</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">::</span>print<span style="color:#f92672">);</span>        Mono<span style="color:#f92672">.</span><span style="color:#a6e22e">just</span><span style="color:#f92672">(</span>1<span style="color:#f92672">).</span><span style="color:#a6e22e">subscribe</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">::</span>print<span style="color:#f92672">);</span>
+</code></pre></div><p><strong>操作符</strong></p>
+<p>对数据流进行一道道操作，成为操作符，比如工厂流水线</p>
+<p>map 元素映射为新元素</p>
+<p>flatMap 元素映射为流；把每个元素转换流，把转换之后多个流合并大的流</p>
+<h2 id="springwebflux-执行流程和核心-api">SpringWebflux 执行流程和核心 API</h2>
+<ol>
+<li>
+<p>SpringWebflux 基于 Reactor，默认使用容器是 Netty，Netty 是高性能的 NIO 框架，异步非阻塞的框架</p>
+</li>
+<li>
+<p>SpringWebflux 核心控制器 DispatchHandler，实现接口 WebHandler 接口</p>
+</li>
+<li>
+<p>SpringWebflux 里面 DispatcherHandler负责请求的处理</p>
+<p>HandlerMapping请求查询到处理的方法</p>
+<p>HandlerAdapter真正负责请求处理</p>
+<p>HandlerResultHandler响应结果处理</p>
+</li>
+<li>
+<p>SpringWebflux 实现函数式编程，</p>
+<p>两个接口：<strong>RouterFunction（路由处理）</strong> 和 <strong>HandlerFunction（处理函数）</strong></p>
+</li>
+</ol>
+<h2 id="springwebflux基于注解编程模型">SpringWebflux（基于注解编程模型）</h2>
+<p>SpringWebflux 实现方式有两种：注解编程模型和函数式编程模型</p>
+<p>使用注解编程模型方式，和之前 SpringMVC 使用相似的，只需要把相关依赖配置到项目中， SpringBoot 自动配置相关运行容器，默认情况下使用 Netty 服务器</p>
+<p>SpringMVC 方式实现，同步阻塞的方式，基于 SpringMVC+Servlet+Tomcat</p>
+<p>SpringWebflux 方式实现，异步非阻塞 方式，基于 SpringWebflux+Reactor+Netty</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//用户操作接口
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">UserService</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">//根据id查询用户
+</span><span style="color:#75715e"></span>    Mono<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUserById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> id<span style="color:#f92672">);</span><span style="color:#75715e">//Mono返回单个或零个元素
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">//查询所有用户
+</span><span style="color:#75715e"></span>    Flux<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getAllUser</span><span style="color:#f92672">();</span><span style="color:#75715e">//Flux返回多个元素
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">//添加用户
+</span><span style="color:#75715e"></span>    Mono<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">saveUserInfo</span><span style="color:#f92672">(</span>Mono<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> user<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//接口实现类
+</span><span style="color:#75715e">//创建map集合存储数据
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@Repository</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserServiceImpl</span> <span style="color:#66d9ef">implements</span> UserService <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Map<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span>User<span style="color:#f92672">&gt;</span> users <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">UserServiceImpl</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">users</span><span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span><span style="color:#66d9ef">new</span> User<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;lucy&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;nan&#34;</span><span style="color:#f92672">,</span>20<span style="color:#f92672">));</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">users</span><span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>2<span style="color:#f92672">,</span><span style="color:#66d9ef">new</span> User<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mary&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;nv&#34;</span><span style="color:#f92672">,</span>30<span style="color:#f92672">));</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">users</span><span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>3<span style="color:#f92672">,</span><span style="color:#66d9ef">new</span> User<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;jack&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;nv&#34;</span><span style="color:#f92672">,</span>50<span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">//根据id查询
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Mono<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUserById</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> Mono<span style="color:#f92672">.</span><span style="color:#a6e22e">justOrEmpty</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">users</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>id<span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">//查询多个用户
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Flux<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getAllUser</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> Flux<span style="color:#f92672">.</span><span style="color:#a6e22e">fromIterable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">users</span><span style="color:#f92672">.</span><span style="color:#a6e22e">values</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">//添加用户
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Mono<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">saveUserInfo</span><span style="color:#f92672">(</span>Mono<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> userMono<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> userMono<span style="color:#f92672">.</span><span style="color:#a6e22e">doOnNext</span><span style="color:#f92672">(</span>person <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+            <span style="color:#75715e">//向map集合里面放值
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">int</span> id <span style="color:#f92672">=</span> users<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()+</span>1<span style="color:#f92672">;</span>
+            users<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>id<span style="color:#f92672">,</span>person<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}).</span><span style="color:#a6e22e">thenEmpty</span><span style="color:#f92672">(</span>Mono<span style="color:#f92672">.</span><span style="color:#a6e22e">empty</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RestController</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">//注入 service
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Autowired</span>
+    <span style="color:#66d9ef">private</span> UserService userService<span style="color:#f92672">;</span>
+    <span style="color:#75715e">//id 查询
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/user/{id}&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> Mono<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">geetUserId</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#66d9ef">int</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> userService<span style="color:#f92672">.</span><span style="color:#a6e22e">getUserById</span><span style="color:#f92672">(</span>id<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#75715e">//查询所有
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/user&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> Flux<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUsers</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> userService<span style="color:#f92672">.</span><span style="color:#a6e22e">getAllUser</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#75715e">//添加
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@PostMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/saveuser&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> Mono<span style="color:#f92672">&lt;</span>Void<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">saveUser</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> User user<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        Mono<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> userMono <span style="color:#f92672">=</span> Mono<span style="color:#f92672">.</span><span style="color:#a6e22e">just</span><span style="color:#f92672">(</span>user<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> userService<span style="color:#f92672">.</span><span style="color:#a6e22e">saveUserInfo</span><span style="color:#f92672">(</span>userMono<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="springwebflux基于函数式编程模型">SpringWebflux（基于函数式编程模型）</h2>
+<blockquote>
+<p>（1）在使用函数式编程模型操作时候，需要自己初始化服务器</p>
+<p>（2）基于函数式编程模型时候，有两个核心接口：RouterFunction（实现路由功能，请求转发 给对应的 handler）和 HandlerFunction（处理请求生成响应的函数）。核心任务定义两个函数 式接口的实现并且启动需要的服务器。</p>
+<p>（ 3 ） SpringWebflux 请 求 和 响 应 不 再 是 ServletRequest 和 ServletResponse ，而是 ServerRequest 和 ServerResponse</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserHandler</span> <span style="color:#f92672">{</span>
+ <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> UserService userService<span style="color:#f92672">;</span>
+ <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">UserHandler</span><span style="color:#f92672">(</span>UserService userService<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+ <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userService</span> <span style="color:#f92672">=</span> userService<span style="color:#f92672">;</span>
+ <span style="color:#f92672">}</span>
+ <span style="color:#75715e">//根据 id 查询
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">public</span> Mono<span style="color:#f92672">&lt;</span>ServerResponse<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getUserById</span><span style="color:#f92672">(</span>ServerRequest request<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+     <span style="color:#75715e">//获取 id 值
+</span><span style="color:#75715e"></span>     <span style="color:#66d9ef">int</span> userId <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>request<span style="color:#f92672">.</span><span style="color:#a6e22e">pathVariable</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">));</span>
+     <span style="color:#75715e">//空值处理
+</span><span style="color:#75715e"></span>     Mono<span style="color:#f92672">&lt;</span>ServerResponse<span style="color:#f92672">&gt;</span> notFound <span style="color:#f92672">=</span> ServerResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">notFound</span><span style="color:#f92672">().</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
+     <span style="color:#75715e">//调用 service 方法得到数据
+</span><span style="color:#75715e"></span>     Mono<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> userMono <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userService</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getUserById</span><span style="color:#f92672">(</span>userId<span style="color:#f92672">);</span>
+     <span style="color:#75715e">//把 userMono 进行转换返回
+</span><span style="color:#75715e"></span>     <span style="color:#75715e">//使用 Reactor 操作符 flatMap
+</span><span style="color:#75715e"></span>     <span style="color:#66d9ef">return</span> userMono<span style="color:#f92672">.</span><span style="color:#a6e22e">flatMap</span><span style="color:#f92672">(</span>person <span style="color:#f92672">-&gt;</span>
+            ServerResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">ok</span><span style="color:#f92672">().</span><span style="color:#a6e22e">contentType</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON</span><span style="color:#f92672">).</span><span style="color:#a6e22e">body</span><span style="color:#f92672">(</span>fromObject<span style="color:#f92672">(</span>person<span style="color:#f92672">)))</span>
+             <span style="color:#f92672">.</span><span style="color:#a6e22e">switchIfEmpty</span><span style="color:#f92672">(</span>notFound<span style="color:#f92672">);</span>
+     <span style="color:#f92672">}</span>
+
+ <span style="color:#75715e">//查询所有
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">public</span> Mono<span style="color:#f92672">&lt;</span>ServerResponse<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getAllUsers</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+     <span style="color:#75715e">//调用 service 得到结果
+</span><span style="color:#75715e"></span>     Flux<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> users <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userService</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getAllUser</span><span style="color:#f92672">();</span>
+     <span style="color:#66d9ef">return</span> ServerResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">ok</span><span style="color:#f92672">().</span><span style="color:#a6e22e">contentType</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON</span><span style="color:#f92672">)</span>
+         	 <span style="color:#f92672">.</span><span style="color:#a6e22e">body</span><span style="color:#f92672">(</span>users<span style="color:#f92672">,</span>User<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+     <span style="color:#f92672">}</span>
+    
+ <span style="color:#75715e">//添加
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">public</span> Mono<span style="color:#f92672">&lt;</span>ServerResponse<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">saveUser</span><span style="color:#f92672">(</span>ServerRequest request<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">//得到 user 对象
+</span><span style="color:#75715e"></span>        Mono<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> userMono <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">bodyToMono</span><span style="color:#f92672">(</span>User<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span>
+            ServerResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">ok</span><span style="color:#f92672">().</span><span style="color:#a6e22e">build</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">userService</span><span style="color:#f92672">.</span><span style="color:#a6e22e">saveUserInfo</span><span style="color:#f92672">(</span>userMono<span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//1 创建 Router 路由
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> RouterFunction<span style="color:#f92672">&lt;</span>ServerResponse<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">routingFunction</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+ <span style="color:#75715e">//创建 hanler 对象
+</span><span style="color:#75715e"></span> UserService userService <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> UserServiceImpl<span style="color:#f92672">();</span>
+ UserHandler handler <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> UserHandler<span style="color:#f92672">(</span>userService<span style="color:#f92672">);</span>
+ <span style="color:#75715e">//设置路由
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">return</span> RouterFunctions<span style="color:#f92672">.</span><span style="color:#a6e22e">route</span><span style="color:#f92672">(</span>
+GET<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/users/{id}&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">and</span><span style="color:#f92672">(</span>accept<span style="color:#f92672">(</span>APPLICATION_JSON<span style="color:#f92672">)),</span>handler<span style="color:#f92672">::</span>getUserById<span style="color:#f92672">)</span>
+ <span style="color:#f92672">.</span><span style="color:#a6e22e">andRoute</span><span style="color:#f92672">(</span>GET<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/users&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">and</span><span style="color:#f92672">(</span>accept<span style="color:#f92672">(</span>APPLICATION_JSON<span style="color:#f92672">)),</span>handler<span style="color:#f92672">::</span>getAllUsers<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e">//2 创建服务器完成适配
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">createReactorServer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+ <span style="color:#75715e">//路由和 handler 适配
+</span><span style="color:#75715e"></span> RouterFunction<span style="color:#f92672">&lt;</span>ServerResponse<span style="color:#f92672">&gt;</span> route <span style="color:#f92672">=</span> routingFunction<span style="color:#f92672">();</span>
+ HttpHandler httpHandler <span style="color:#f92672">=</span> toHttpHandler<span style="color:#f92672">(</span>route<span style="color:#f92672">);</span>
+ ReactorHttpHandlerAdapter adapter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ReactorHttpHandlerAdapter<span style="color:#f92672">(</span>httpHandler<span style="color:#f92672">);</span>
+ <span style="color:#75715e">//创建服务器
+</span><span style="color:#75715e"></span> HttpServer httpServer <span style="color:#f92672">=</span> HttpServer<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">();</span>
+ httpServer<span style="color:#f92672">.</span><span style="color:#a6e22e">handle</span><span style="color:#f92672">(</span>adapter<span style="color:#f92672">).</span><span style="color:#a6e22e">bindNow</span><span style="color:#f92672">();</span><span style="color:#75715e">//立即生效
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+
+<span style="color:#75715e">//最终调用
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
+ Server server <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Server<span style="color:#f92672">();</span>
+ server<span style="color:#f92672">.</span><span style="color:#a6e22e">createReactorServer</span><span style="color:#f92672">();</span>
+ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;enter to exit&#34;</span><span style="color:#f92672">);</span>
+ System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">//使用 WebClient 调用
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Client</span> <span style="color:#f92672">{</span>
+     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+     <span style="color:#75715e">//调用服务器地址
+</span><span style="color:#75715e"></span>     WebClient webClient <span style="color:#f92672">=</span> WebClient<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;http://127.0.0.1:5794&#34;</span><span style="color:#f92672">);</span>
+     <span style="color:#75715e">//根据 id 查询
+</span><span style="color:#75715e"></span>     String id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">;</span>
+     User userresult <span style="color:#f92672">=</span> webClient<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">uri</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/users/{id}&#34;</span><span style="color:#f92672">,</span> id<span style="color:#f92672">)</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">accept</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON</span><span style="color:#f92672">).</span><span style="color:#a6e22e">retrieve</span><span style="color:#f92672">().</span><span style="color:#a6e22e">bodyToMono</span><span style="color:#f92672">(</span>User<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">block</span><span style="color:#f92672">();</span>
+     System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>userresult<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+     <span style="color:#75715e">//查询所有
+</span><span style="color:#75715e"></span>     Flux<span style="color:#f92672">&lt;</span>User<span style="color:#f92672">&gt;</span> results <span style="color:#f92672">=</span> webClient<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">().</span><span style="color:#a6e22e">uri</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/users&#34;</span><span style="color:#f92672">)</span>
+     <span style="color:#f92672">.</span><span style="color:#a6e22e">accept</span><span style="color:#f92672">(</span>MediaType<span style="color:#f92672">.</span><span style="color:#a6e22e">APPLICATION_JSON</span><span style="color:#f92672">).</span><span style="color:#a6e22e">retrieve</span><span style="color:#f92672">().</span><span style="color:#a6e22e">bodyToFlux</span><span style="color:#f92672">(</span>User<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+
+     results<span style="color:#f92672">.</span><span style="color:#a6e22e">map</span><span style="color:#f92672">(</span>stu <span style="color:#f92672">-&gt;</span> stu<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">())</span>
+     <span style="color:#f92672">.</span><span style="color:#a6e22e">buffer</span><span style="color:#f92672">().</span><span style="color:#a6e22e">doOnNext</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">::</span>println<span style="color:#f92672">).</span><span style="color:#a6e22e">blockFirst</span><span style="color:#f92672">();</span>
+     <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/spring%E6%A1%86%E6%9E%B6/">Spring框架</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/post/spring5%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Spring事务操作</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/post/jdbctemplate/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JdbcTemplate</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/post/aop/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Aop</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/post/ioc%E5%AE%B9%E5%99%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">IOC容器</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/post/spring%E6%A1%86%E6%9E%B6%E7%AE%80%E8%BF%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Spring框架简述</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2021 - 
+        
+        2022 Damaicao的博客
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.5.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">目录</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#spring-50-框架自带了通用的日志封装">Spring 5.0 框架自带了通用的日志封装</a></li>
+    <li><a href="#spring5-框架核心容器支持nullable-注解">Spring5 框架核心容器支持@Nullable 注解</a></li>
+    <li><a href="#spring5-核心容器支持函数式风格-genericapplicationcontext">Spring5 核心容器支持函数式风格 GenericApplicationContext</a></li>
+    <li><a href="#junit5单元测试框架">JUnit5单元测试框架</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#响应式编程java-实现">响应式编程（Java 实现）</a></li>
+    <li><a href="#响应式编程reactor-实现">响应式编程（Reactor 实现）</a></li>
+    <li><a href="#springwebflux-执行流程和核心-api">SpringWebflux 执行流程和核心 API</a></li>
+    <li><a href="#springwebflux基于注解编程模型">SpringWebflux（基于注解编程模型）</a></li>
+    <li><a href="#springwebflux基于函数式编程模型">SpringWebflux（基于函数式编程模型）</a></li>
+  </ul>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机 on Damaicao的博客</title>
+    <link>https://damaicao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</link>
+    <description>Recent content in 计算机 on Damaicao的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 15 Jan 2022 18:30:19 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机科学速成课</title>
+      <link>https://damaicao.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE/</link>
+      <pubDate>Sat, 15 Jan 2022 18:30:19 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE/</guid>
+      <description>本笔记由B站小伙伴(别人家的孩子小明,汉苍茫茫)开源提供
+https://shimo.im/docs/vkCKkj3YxGtygrVg/
+https://shimo.im/docs/PJAUY30F1uYksv0h/
+视频【计算机科学速成课】40集全/精校] - Crash Course Computer Science_哔哩哔哩_bilibili
+[TOC]
+第一课：计算机早期历史 0、课程目标：从高层次总览一系列计算机话题，快速入门计算机科学。 1、计算机技术的影响——进入信息时代   出现自动化农业设备与医疗设备
+  全球通信和全球教育机会变得普遍
+  出现意想不到的虚拟现实/无人驾驶/人工智能等新领域
+  2、计算机的实质： 极其简单的组件，通过一层层的抽象，来做出复杂的操作。
+计算机中的很多东西，底层其实都很简单，让人难以理解的，是一层层精妙的抽象。像一个越来越小的俄罗斯套娃。
+3、关于计算的历史：   公元前2500年，算盘出现，为十进制，功能类似一个计数器。
+  公元前2500年-公元1500年：星盘、计算尺等依靠机械运动的计算设备出现
+  公元1613年：computer的概念出现，当时指的是专门做计算的职业，
+  1694年：步进计算器出现，是世界上第一台能自动完成加减乘除的计算器。
+  1694-1900年：计算表兴起，类似于字典，可用于查找各种庞大的计算值。
+  1823年：差分机的设想出现，可以做函数计算，但计划最后失败。
+  19世纪中期：分析机的设想出现，设想存在可计算一切的通用计算机。
+  1890年：打孔卡片制表机。原理：在纸上打孔→孔穿过针→针泡入汞→电路连通→齿轮使计数+1。
+  第二课：电子计算机的发展史 1、电子计算机元器件变化： 继电器→真空管→晶体管
+2、计算机的出现背景： 20世纪人口暴增，科学与工程进步迅速，航天计划成形。以上导致数据的复杂度急剧上升、计算量暴增，对于计算的自动化、高速有迫切的需求。
+3、电子计算机的发展： 1945年 哈佛马克1：使用继电器，用电磁效应，控制机械开关，缺点为有磨损和延迟。
+*最早还因为有虫子飞进去导致故障，引申出bug=故障的意思。
+1943年 巨人1号：使用真空管（三极管），制造出世界上第一个可编程的计算机。
+1946年 ENIAC：第一个电子数值积分计算机，为第一台通用计算机。
+1947年 晶体管出现，使用的是固态的半导体材料，相对真空管更可靠。
+1950s 空军ANFSQ-7： 真空管到达计算极限。</description>
+    </item>
+    
+  </channel>
+</rss>

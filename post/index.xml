@@ -6,7 +6,190 @@
     <description>Recent content in Posts on Damaicao的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Dec 2021 01:23:09 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jan 2022 15:31:42 +0800</lastBuildDate><atom:link href="https://damaicao.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring5新功能</title>
+      <link>https://damaicao.github.io/post/spring5%E6%96%B0%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Fri, 21 Jan 2022 15:31:42 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/spring5%E6%96%B0%E5%8A%9F%E8%83%BD/</guid>
+      <description>Spring5新功能 整个 Spring5 框架的代码基于 Java8，运行时兼容 JDK9
+Spring 5.0 框架自带了通用的日志封装 Spring5 已经移除 Log4jConfigListener，官方建议使用 Log4j2
+Spring5 框架整合 Log4j2(漏洞)
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!--日志级别以及优先级排序: OFF &amp;gt; FATAL &amp;gt; ERROR &amp;gt; WARN &amp;gt; INFO &amp;gt; DEBUG &amp;gt; TRACE &amp;gt; ALL --&amp;gt; &amp;lt;!--Configuration 后面的 status 用于设置 log4j2 自身内部的信息输出，可以不设置，当设置成 trace 时，可以看到 log4j2 内部各种详细输出--&amp;gt; &amp;lt;configuration status=&amp;#34;INFO&amp;#34;&amp;gt; &amp;lt;!--先定义所有的 appender--&amp;gt; &amp;lt;appenders&amp;gt; &amp;lt;!--输出日志信息到控制台--&amp;gt; &amp;lt;console name=&amp;#34;Console&amp;#34; target=&amp;#34;SYSTEM_OUT&amp;#34;&amp;gt; &amp;lt;!--控制日志输出的格式--&amp;gt; &amp;lt;PatternLayout pattern=&amp;#34;%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n&amp;#34;/&amp;gt; &amp;lt;/console&amp;gt; &amp;lt;/appenders&amp;gt; &amp;lt;!--然后定义 logger，只有定义 logger 并引入的 appender，appender 才会生效!</description>
+    </item>
+    
+    <item>
+      <title>Spring事务操作</title>
+      <link>https://damaicao.github.io/post/spring5%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Thu, 20 Jan 2022 20:51:47 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/spring5%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C/</guid>
+      <description>事务操作 事务概念 什么是事务 事务是数据库操作最基本单元，逻辑上一组操作，要么都成功，如果有一个失败所有操 作都失败
+事务四个特性 - ACID   原子性：
+事务包含要执行的所有操作要么全部成功，要么全部失败，进行回滚（回滚就是将所有操作还原）。因此事务的操作若成功了就一定对数据库做了改变，若操作失败则不能对数据库有任何影响。
+  一致性：
+指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。
+拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性。
+  隔离性：
+隔离性是为了保证每一个用户在开启并使用事务时，不被其他事务操作所干扰，保持独立的工作不受外界干扰，主要就是防止多个用户对数据库同一张表的访问操作。例如：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行.
+  持久性：
+比如一个事务一旦提交以后，那么对数据库表的操作改变就是永久的（比如删除了表中一条记录就永久删除了），即便是数据库系统遇到故障异常情况事务操作仍然会产生改变。
+  模拟事务操作环境 try { //第一步 开启事务  //第二步 进行业务操作  userDao.reduceMoney();//lucy 少 100  int x=10/0; userDao.addMoney(); //mary 多 100  //第三步 没有发生异常，提交事务 } catch (Exception e){ //第四步 出现异常，事务回滚  } Spring 事务管理介绍   事务添加到 JavaEE 三层结构里面 Service 层（业务逻辑层）
+  在 Spring 进行事务管理操作 ；两种方式：编程式事务管理、声明式事务管理（推荐使用）</description>
+    </item>
+    
+    <item>
+      <title>JdbcTemplate</title>
+      <link>https://damaicao.github.io/post/jdbctemplate/</link>
+      <pubDate>Thu, 20 Jan 2022 17:03:51 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/jdbctemplate/</guid>
+      <description>Spring JdbcTemplate详解 - 知乎 (zhihu.com)
+JdbcTemplate Spring 框架对 JDBC 进行封装，使用 JdbcTemplate 方便实现对数据库操作
+在 spring 配置文件配置数据库连接池 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;beans xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns:context=&amp;#34;http://www.springframework.org/schema/context&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&amp;#34;&amp;gt; &amp;lt;context:component-scan base-package=&amp;#34;spring5&amp;#34;&amp;gt;&amp;lt;/context:component-scan&amp;gt; &amp;lt;context:property-placeholder location=&amp;#34;classpath:jdbc.properties&amp;#34;/&amp;gt; &amp;lt;bean id=&amp;#34;dataSource&amp;#34; class=&amp;#34;com.alibaba.druid.pool.DruidDataSource&amp;#34; destroy-method=&amp;#34;close&amp;#34;&amp;gt; &amp;lt;property name=&amp;#34;driverClassName&amp;#34; value=&amp;#34;${prop.driverClass}&amp;#34;/&amp;gt; &amp;lt;property name=&amp;#34;url&amp;#34; value=&amp;#34;${prop.url}&amp;#34;/&amp;gt; &amp;lt;property name=&amp;#34;username&amp;#34; value=&amp;#34;${prop.userName}&amp;#34;/&amp;gt; &amp;lt;property name=&amp;#34;password&amp;#34; value=&amp;#34;${prop.password}&amp;#34;/&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;bean id=&amp;#34;jdbcTemplate&amp;#34; class=&amp;#34;org.springframework.jdbc.core.JdbcTemplate&amp;#34;&amp;gt; &amp;lt;property name=&amp;#34;dataSource&amp;#34; ref=&amp;#34;dataSource&amp;#34;&amp;gt;&amp;lt;/property&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;/beans&amp;gt; prop.driverClass=com.mysql.cj.jdbc.Driver prop.url=jdbc:mysql://localhost:3306/user_db?serverTimezone=UTC&amp;amp;characterEncoding=UTF-8 prop.userName=root prop.password=root 创建 service 类，创建 dao 类，在 dao 注入 jdbcTemplate 对象 //service @Service public class BookService { @Autowired private BookDao bookDao; } //dao实现类 @Repository public class BookDaoImpl implements BookDao { @Autowired private JdbcTemplate jdbcTemplate; } JdbcTemplate 操作数据库 添加 //实现类 @Override public void add(Book book) { String sql = &amp;#34;insert into t_book values(?</description>
+    </item>
+    
+    <item>
+      <title>Aop</title>
+      <link>https://damaicao.github.io/post/aop/</link>
+      <pubDate>Wed, 19 Jan 2022 12:07:44 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/aop/</guid>
+      <description>本文参考了 : Spring AOP——Spring 中面向切面编程 - SharpCJ - 博客园 (cnblogs.com)
+AOP基本概念  面向切面编程（方面），利用 AOP 可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。 通俗描述：不通过修改源代码方式，在主干功能里面添加新功能 AOP 要达到的效果是，保证开发者不修改源代码的前提下，去为系统中的业务组件添加某种通用功能。  AOP底层原理 AOP 底层使用动态代理 ，动态代理有两种情况：
+  有接口情况，使用 JDK 动态代理 ；创建接口实现类代理对象，增强类的方法
+静态 AOP 实现， AOP 框架在编译阶段对程序源代码进行修改，生成了静态的 AOP 代理类（生成的 *.class 文件已经被改掉了，需要使用特定的编译器），比如 AspectJ。
+  没有接口情况，使用 CGLIB 动态代理；创建子类的代理对象，增强类的方法
+动态 AOP 实现， AOP 框架在运行阶段对动态生成代理对象（在内存中以 JDK 动态代理，或 CGlib 动态地生成 AOP 代理类），如 SpringAOP。
+  常用 AOP 实现比较
+AOP的JDK 动态代理 使用 JDK 动态代理，使用 Proxy 类里面的方法创建代理对象</description>
+    </item>
+    
+    <item>
+      <title>IOC容器</title>
+      <link>https://damaicao.github.io/post/ioc%E5%AE%B9%E5%99%A8/</link>
+      <pubDate>Sun, 16 Jan 2022 19:35:55 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/ioc%E5%AE%B9%E5%99%A8/</guid>
+      <description>一、IOC容器 IOC容器 什么是IOC  控制反转,把对象创建和对象之间的调用过程，交给Spring进行管理 使用IOC目的：为了降低耦合度  IOC底层原理 xml解析、工厂模式、反射
+Spring提供的IOC容器实现的两种方式（两个接口） BeanFactory接口：IOC容器基本实现是Spring内部接口的使用接口，不提供给开发人员进行使用
+（加载配置文件时候不会创建对象，在获取对象时才会创建对象。)
+采取的懒加载的方式,在获取对象时才会实例化
+Spring源码解析：BeanFactory深入理解_FromNowOnUntilTheEnd-CSDN博客_beanfactory
+ApplicationContext接口：BeanFactory接口的子接口，提供更多更强大的功能，提供给开发人员使用
+（加载配置文件时候就会把在配置文件对象进行创建.)
+在工厂初始化时立即实例化对象
+Spring核心讲解篇——ApplicationContext - 知乎 (zhihu.com)
+ApplicationContext接口的实现类 二、IOC容器-Bean管理 Spring Bean管理 - CoderJerry - 博客园 (cnblogs.com)
+1.IOC操作Bean管理 指两个操作
+ Spring创建对象 Spring注入属性  2.Bean管理操作的两种方式 3.基于xml配置文件方式实现   在spring配置文件中使用bean标签
+  &amp;lt;bean id=&amp;quot;user&amp;quot; class=&amp;quot;spring5.User&amp;quot;&amp;gt;&amp;lt;/bean&amp;gt;     属性介绍
+ id:标识名 class:类全路径    创建对象时候，默认也是执行无参数构造方法完成对象创建
+  4.基于XML方式注入属性 DI：依赖注入(注入属性)
+1. set方式注入   在类里面set
+  &amp;lt;bean id=&amp;#34;book&amp;#34; class=&amp;#34;spring5.</description>
+    </item>
+    
+    <item>
+      <title>Spring框架简述</title>
+      <link>https://damaicao.github.io/post/spring%E6%A1%86%E6%9E%B6%E7%AE%80%E8%BF%B0/</link>
+      <pubDate>Sun, 16 Jan 2022 16:47:27 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/spring%E6%A1%86%E6%9E%B6%E7%AE%80%E8%BF%B0/</guid>
+      <description>一、什么是Spring？ 1、什么是spring?（面试题） Spring是一个开源的Java EE开发框架。Spring框架的核心功能可以应用在任何Java应用程序中，但对Java EE平台上的Web应用程序有更好的扩展性。Spring框架的目标是使得Java EE应用程序的开发更加简捷，通过使用POJO为基础的编程模型促进良好的编程风格。
+  Spring是轻量级的开源的JavaEE框架
+  Spring可以解决企业应用开发的复杂性。
+  Spring有两个核心部分:IOC和Aop
+  IOC:控制反转,把创建对象过程交给Spring进行管理)
+  Aop:面向切面,不修改源代码进行功能增强
+    Spring特点
+ 方便解耦，简化开发 Aop编程支持 方便程序测试 方便和其他框架进行整合; 方便进行事务操作, 降低API开发难度·    spring下载地址</description>
+    </item>
+    
+    <item>
+      <title>计算机科学速成课</title>
+      <link>https://damaicao.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE/</link>
+      <pubDate>Sat, 15 Jan 2022 18:30:19 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE/</guid>
+      <description>本笔记由B站小伙伴(别人家的孩子小明,汉苍茫茫)开源提供
+https://shimo.im/docs/vkCKkj3YxGtygrVg/
+https://shimo.im/docs/PJAUY30F1uYksv0h/
+视频【计算机科学速成课】40集全/精校] - Crash Course Computer Science_哔哩哔哩_bilibili
+[TOC]
+第一课：计算机早期历史 0、课程目标：从高层次总览一系列计算机话题，快速入门计算机科学。 1、计算机技术的影响——进入信息时代   出现自动化农业设备与医疗设备
+  全球通信和全球教育机会变得普遍
+  出现意想不到的虚拟现实/无人驾驶/人工智能等新领域
+  2、计算机的实质： 极其简单的组件，通过一层层的抽象，来做出复杂的操作。
+计算机中的很多东西，底层其实都很简单，让人难以理解的，是一层层精妙的抽象。像一个越来越小的俄罗斯套娃。
+3、关于计算的历史：   公元前2500年，算盘出现，为十进制，功能类似一个计数器。
+  公元前2500年-公元1500年：星盘、计算尺等依靠机械运动的计算设备出现
+  公元1613年：computer的概念出现，当时指的是专门做计算的职业，
+  1694年：步进计算器出现，是世界上第一台能自动完成加减乘除的计算器。
+  1694-1900年：计算表兴起，类似于字典，可用于查找各种庞大的计算值。
+  1823年：差分机的设想出现，可以做函数计算，但计划最后失败。
+  19世纪中期：分析机的设想出现，设想存在可计算一切的通用计算机。
+  1890年：打孔卡片制表机。原理：在纸上打孔→孔穿过针→针泡入汞→电路连通→齿轮使计数+1。
+  第二课：电子计算机的发展史 1、电子计算机元器件变化： 继电器→真空管→晶体管
+2、计算机的出现背景： 20世纪人口暴增，科学与工程进步迅速，航天计划成形。以上导致数据的复杂度急剧上升、计算量暴增，对于计算的自动化、高速有迫切的需求。
+3、电子计算机的发展： 1945年 哈佛马克1：使用继电器，用电磁效应，控制机械开关，缺点为有磨损和延迟。
+*最早还因为有虫子飞进去导致故障，引申出bug=故障的意思。
+1943年 巨人1号：使用真空管（三极管），制造出世界上第一个可编程的计算机。
+1946年 ENIAC：第一个电子数值积分计算机，为第一台通用计算机。
+1947年 晶体管出现，使用的是固态的半导体材料，相对真空管更可靠。
+1950s 空军ANFSQ-7： 真空管到达计算极限。</description>
+    </item>
+    
+    <item>
+      <title>十大算法</title>
+      <link>https://damaicao.github.io/post/%E5%8D%81%E5%A4%A7%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 11 Jan 2022 23:02:23 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/%E5%8D%81%E5%A4%A7%E7%AE%97%E6%B3%95/</guid>
+      <description>算法 二分查找  二分查找法只适用于从有序的数列中进行查找(比如数字和字母等)，将数列排序后再进行查找 二分查找法的运行时间为对数时间o(log2n)，即查找到需要的目标位置最多只需要log2n步，假设从[0,99]的队列(100个数，即n=100)中寻到目标数30，则需要查找步数为log2100，即最多需要查找7次(2^6&amp;lt;100 &amp;lt;2^7)  int left = 0; int right = arr.length - 1; while(left &amp;lt;= right){ int mid = (left + right) / 2; if (arr[mid] == target){ return arr[mid]; } else if (arr[mid] &amp;gt; target){ right = mid - 1; } else{ left = mid + 1; } } return -1; 分治算法   分治法是一种很重要的算法。字面上的解释是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题&amp;hellip;.直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。这个技巧是很多高效算法的基础，如排序算法(快速排序，归并排序)，傅立叶变换(快速傅立叶变换)&amp;hellip;.
+  分治算法可以求解的一些经典问题
+ 二分搜索 大整数乘法 棋盘覆盖 合并排序 快速排序 线性时间选择 最接近点对问题 循环赛日程表 汉诺塔    基本步骤</description>
+    </item>
+    
+    <item>
+      <title>图</title>
+      <link>https://damaicao.github.io/post/%E5%9B%BE/</link>
+      <pubDate>Tue, 11 Jan 2022 11:19:09 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/%E5%9B%BE/</guid>
+      <description>图 为什么用图  线性表局限于一个直接前驱和一个直接后继的关系 树也只能有一个直接前驱也就是文节点 当我们需要表示多对多的关系时，这里我们就用到了图  图是一种数据结构，其中结点可以具有零个或多个相邻元素。
+两个结点之间的连接称为边。结点也可以称为顶点。
+常用概念  顶点 边 路径 无向图:顶点之间的连接没有方向img 有向图img 带权图  图的表示  邻接矩阵:表示图形中顶点之间相邻关系的矩阵img 邻接表  邻接矩阵需要为每个顶点都分配n个边的空间，其实有很多边都是不存在,会造成空间的一定损失. 邻接表的实现只关心存在的边，不关心不存在的边。因此没有空间浪费，邻接表由数组+链表组成 img    图的遍历 所谓图的遍历，即是对结点的访问。一个图有那么多个结点，如何遍历这些结点，需要特定策略
+一般有两种访问策略:(1深度优先遍历(⑵)广度优先遍历
+深度优先遍历(Depth First Search,DFS) 基本思想  深度优先遍历，从初始访问结点出发，初始访问结点可能有多个邻接结点，深度优先遍历的策略就是首先访问第一个邻接结点，然后再以这个被访问的邻接结点作为初始结点，访问它的第一个邻接结点，可以这样理解:每次都在访问完当前结点后首先访问当前结点的第一个邻接结点。 我们可以看到，这样的访问策略是优先往纵向挖掘深入，而不是对一个结点的所有邻接结点进行横向访问。 显然，深度优先搜索是一个递归的过程  步骤  访问初始结点v，并标记结点v为已访问。 查找结点v的第一个邻接结点w。 若w存在，则继续执行4，如果w不存在，则回到第1步，将从v的下一个结点继续。 若w未被访问，对w进行深度优先遍历递归（即把w当做另一个v，然后进行步骤123） 查找结点v的w邻接结点的下一个邻接结点，转到步骤3。  广度优先搜索(BFS) 类似于一个分层搜索的过程，广度优先遍历需要使用一个队列以保持访问过的结点的顺序,以便按这个顺序来访问这些结点的邻接结点
+遍历  访问初始结点v并标记结点v为已访问。 结点v入队列 当队列非空时，继续执行，否则算法结束。 出队列，取得队头结点u。 查找结点u的第一个邻接结点w。 若结点u的邻接结点w不存在，则转到步骤3;否则循环执行以下三个步骤:  若结点w尚未被访问，则访问结点w并标记为已访问。 结点w入队列 查找结点u的继w邻接结点后的下一个邻接结点w，转到步骤6。    </description>
+    </item>
+    
+    <item>
+      <title>树</title>
+      <link>https://damaicao.github.io/post/%E6%A0%91/</link>
+      <pubDate>Sun, 02 Jan 2022 21:32:24 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/%E6%A0%91/</guid>
+      <description>哈希表(散列) 散列表(Hash table，也叫哈希表),是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。
+树 数组存储方式的分析 优点:通过下标方式访问元素，速度快。对于有序数组，还可使用二分查找提高检索速度。 缺点:如果要检索具体某个值，或者插入值(按一定顺序)会整体移动，效率较低
+链式存储方式的分析 优点:在一定程度上对数组存储方式有优化(比如:插入一个数值节点，只需要将插入节点，链接到链表中即可，删除效率也很好)。 缺点:在进行检索时，效率仍然较低，比如(检索某个值，需要从头节点开始遍历)
+树存储方式的分析 能提高数据存储，读取的效率，比如利用二叉排序树(Binary Sort Tree)，既可以保证数据的检索速度，同时也可以保证数据的插入，删除，修改的速度。
+树的常用术语(结合示意图理解)  节点 根点 交节点 子节点 叶子节点(没有子节点的节点 节点的权(节点值) 路径(从root节点找到该节点的路线) 层 子树 树的高度(最大层数 森林:多颗子树构成森林  二叉树 概念  树有很多种,每个节点最多只能有两个子节点的一种形式称为二叉树 二叉树的子节点分为左节点和右节点 如果该二叉树的所有叶子节点都在最后一层,并且结点总数=2^n-1,n为层数,则我们称为满二叉树 如果该二叉树的所有叶子节点都在最后一层或者倒数第二层,而且最后一层的叶子节点在左边连续,倒数第二层的叶子节点在右边连续,我们称为完全二叉树。  遍历  前序遍历:先输出父节点,再遍历左子树和右子树 中序遍历:先遍历左子树,再父节点,右子树 后序遍历:先遍历左子树,再遍历右子树,最后输出父节点 小结:看输出父节点的顺序,就确定是前序,中序,是后序  分析二又树的前序,中序,后序的遍历步骤
+ 创建一颗二叉树 前序遍历  先输出当前节点(初始的时候是root节点 如果左子节点不为空,则递归继续前序遍历 如果右子节点不为空,则递归继续前序遍历   中序遍历  如果当前节点的左子节点不为空,则递归中序遍历 输出当前节点 如果当前节点的右子节点不为空,则递归中序遍历   后序遍历  如果当前节点的左子节点不为空,则递归后序遍历 如果当前节点的右子节点不为空,则递归后序遍历 输出当前节点    查找  使用前序,中序,后序的方式来查询指定的结点 前序查找思路  先判断当前结点的no是否等于要查找的 如果是相等,则返回当前结点 如果不等,则判断当前结点的左子节点是否为空,如果不为空,则递归前序查找 如果左递归前序查找,找到结点,则返回,否继续判断,当前的结点的右子节点是否为空,如果不空,则继续向右递归前序查找   中序查找思路  判断当前结点的左子节点是否为空,如果不为空,则递归中序查找 如果找到,则返回,如果没有找到,就和当前结点比较,如果是则返回当前结点,否则继续进行右递归的中序查找 如果右递归中序查找,找到就返回,否则返回null   后序查找思路  判断当前结点的左子节点是否为空,如果不为空,则递归后序查找 如果找到,就返回,如果没有找到,就判断当前结点的右子节点是否为空,如果不为空,则右递归进行后序查找如果找到,就返回 就和当前结点进行,比如,如果是则返回,否则返回null    删除   完成删除结点的操作</description>
+    </item>
+    
+    <item>
+      <title>查找算法</title>
+      <link>https://damaicao.github.io/post/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sun, 02 Jan 2022 19:16:57 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/</guid>
+      <description>查找算法 介绍  顺序(线性)查找 二分查找/折半查找 插值查找 斐波那契查找  线性查找 for (int i = 0; i &amp;lt; arr.length; i++) { if (arr[i] == value) { return i; } } return -1; 二分查找 返回目标索引
+// if left &amp;gt; right == not find  if (left &amp;gt; right){ return -1; } int mid = (left + right) / 2; int midVal = arr[mid]; if (findVal &amp;gt; midVal){ return binarySearch(arr, mid+1 , right, findVal); } else if (findVal &amp;lt; midVal){ return binarySearch(arr, left, mid-1, findVal); } else{ return mid; } 返回所有目标索引</description>
+    </item>
+    
     <item>
       <title>Java学习路线</title>
       <link>https://damaicao.github.io/post/java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</link>
@@ -15,6 +198,7 @@
       <guid>https://damaicao.github.io/post/java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</guid>
       <description>Java 学习路线  [Java 学习路线一条龙版 by 程序员鱼皮](liyupi/code-roadmap: 编程学习路线 (github.com))
  💂 + 💻 = 👴🏽
+[TOC]
 大纲 image-20211127235325557
 路线特点  最新，完整一条龙的大厂 Java 学习路线，从入门到入土 同时适用于想全面学习 / 快速求职的同学，可以根据符号来定制自己的专属学习路线 给出目标、学习建议、关键知识点、最优资源以及各类资源推荐（视频、书籍、文档、项目、工具等） 鱼皮自己是 Java 开发者，融入个人自学和从业的经历 + 思考，让路线有灵魂 划分阶段、更有计划，且在最后给出持续学习的方向、探索 Java 程序员发展的无限可能 完全开源，回馈社区，持续更新！  符号表 可以通过路线知识点前的表情字符，根据自己的实际情况选择学习：
  🌕 所有同学必须学习！！！ 🌖 非常急着找工作，才可不学；目标大厂，必须学习！ 🌗 急着找工作的话，可不学；目标大厂，建议学习 🌘 时间充足的话，再去学 ⭐ 表示推荐资源  写在开头 首先呢，我们要了解 Java 的应用场景和就业方向，看看和自己的学习目的是否一致。
@@ -44,10 +228,10 @@
     
     <item>
       <title>Day02</title>
-      <link>https://damaicao.github.io/post/day02/</link>
+      <link>https://damaicao.github.io/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
       <pubDate>Wed, 01 Dec 2021 01:21:44 +0800</pubDate>
       
-      <guid>https://damaicao.github.io/post/day02/</guid>
+      <guid>https://damaicao.github.io/post/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
       <description>图片
 排序算法 排序也称排序算法 (Sort Algorithm) 是将一组数据，依指定的顺序进行排列的过程
 排序的分类
@@ -69,24 +253,8 @@ O(1) &amp;lt; O(log N) &amp;lt; O(N) &amp;lt; O(Nlog N) &amp;lt; O(N^2) &amp;lt;
       <pubDate>Fri, 26 Nov 2021 00:22:24 +0800</pubDate>
       
       <guid>https://damaicao.github.io/post/%E6%96%B0%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E5%A4%A9/</guid>
-      <description>20211118181809
-你好 你好啊,昼眠和漓消消</description>
-    </item>
-    
-    <item>
-      <title>Day01</title>
-      <link>https://damaicao.github.io/post/day01/</link>
-      <pubDate>Fri, 26 Nov 2021 00:15:58 +0800</pubDate>
-      
-      <guid>https://damaicao.github.io/post/day01/</guid>
-      <description>拉菲-你不冷吗 – 锦里の画作室
-线性结构  数组,队列,链表, 栈
-稀疏数组 **定义:**当一个数组中大部分元素为0,或者为同一个值的数组时,可以使用稀疏数组来保存该数组。
-稀疏数组的处理方法是
- 记录数组一共有几行几列,有多少个不同的值 把具有不同值的元素的行列及值记录在一个小规模的数组中,从而缩小程序的规模  二维数组转稀硫数组的思路:
- 遍历原始的二维数组,得到有效数据的个数sum 根据sum就可以创建稀硫数组 sparseArr int[sum+1][3] 将二维数组的有效数据数据存入到稀硫数组  稀硫数组转原始的二维数组的思路:
- 先读取稀硫数组的第一行,根据第一行的数据,创建原始的二维数组,比如上面的 chessArr2=int[11[11] 在读取稀硫数组后几行的数据,并赋给原始的二维数组即可   链表 小结
- 链表是以节点的方式来存储,是 链式存储  每个节点包含data域,next域:指向下一个节点 如图:发现链表的各个节点 不一定是连续存储 链表分 带头节点的链表 和 没有头节点的链表 ,根据实际的需求来确定  双向链表  栈  栈的英文为( stack) 栈是一个先入后出( FILO-First In last out)的有序列表。 栈(stack)是限制线性表中元素的插入和删除只能在线性表的同一端进行的种特殊线性表。允许插入和删除的一端,为变化的一端,称为栈顶(Top),另端为固定的一端,称为栈底( Bottom) 根据栈的定义可知,最先放入栈中元素在栈底,最后放入的元素在栈项,而删除元素刚好相反,最后放入的元素最先删除,最先放入的元素最后删除  应用场景  子程序的调用:在跳往子程序前,会先将下个指令的地址存到堆栈中,直到子程序执行完后再将地址取出,以回到原来的程序中。 处理递归调用:和子程序的调用类似,只是除了储存下一个指令的地址外,也将参数、区域变量等数据存入堆栈中。 表达式的转换[中缀表达式转后缀表达式]与求值(实际解决)。 二叉树的遍历 图形的深度优先 (depth-first)搜索法。  前,中,后缀表达式 逆波兰表达式</description>
+      <description>20211118181809
+你好 </description>
     </item>
     
     <item>
@@ -96,6 +264,22 @@ O(1) &amp;lt; O(log N) &amp;lt; O(N) &amp;lt; O(Nlog N) &amp;lt; O(N^2) &amp;lt;
       
       <guid>https://damaicao.github.io/post/%E7%AE%97%E6%B3%95%E9%97%AE%E9%A2%98/</guid>
       <description>经典算法  汉诺塔问题 =&amp;gt; 分治算法 八皇后问题 =&amp;gt; 回溯/分治算法 马踏棋盘问题 =&amp;gt; 图的深度优化遍历算法(DFS)+贪心算法优化  主题内容  稀疏数组和队列  稀疏数组 队列   链表  单链表 双向链表 单向环形链表   栈 递归  迷宫问题 八皇后   排序算法  内部 使用内存  插入  直接 间接   选择  简单选择 堆排序   交换  冒泡 快速   归并 基数(桶排序)   外部排序 使用内存和外存   查找算法  线性查找 二分查找 插值查找 斐波那契(黄金分割法)查找   哈希表 树  二叉树  顺序存储二叉树 线索化二叉树   堆排序 赫夫曼树 赫夫曼编码 二叉排序树 平衡二叉树(AVL树)   多路查找树  二叉树与B树 2-3树 B树,B+树,B*树   图  深度优先搜索   十大算法  二分查找 分治算法 动态规划算法 KMP算法 贪心算法 普利姆算法 克鲁斯卡尔算法 迪杰斯特拉算法 弗洛伊德算法 马踏棋盘算法    </description>
+    </item>
+    
+    <item>
+      <title>线性结构</title>
+      <link>https://damaicao.github.io/post/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Fri, 26 Nov 2021 00:15:58 +0800</pubDate>
+      
+      <guid>https://damaicao.github.io/post/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/</guid>
+      <description>拉菲-你不冷吗 – 锦里の画作室
+线性结构  数组,队列,链表, 栈
+稀疏数组 **定义:**当一个数组中大部分元素为0,或者为同一个值的数组时,可以使用稀疏数组来保存该数组。
+稀疏数组的处理方法是
+ 记录数组一共有几行几列,有多少个不同的值 把具有不同值的元素的行列及值记录在一个小规模的数组中,从而缩小程序的规模  二维数组转稀硫数组的思路:
+ 遍历原始的二维数组,得到有效数据的个数sum 根据sum就可以创建稀硫数组 sparseArr int[sum+1][3] 将二维数组的有效数据数据存入到稀硫数组  稀硫数组转原始的二维数组的思路:
+ 先读取稀硫数组的第一行,根据第一行的数据,创建原始的二维数组,比如上面的 chessArr2=int[11[11] 在读取稀硫数组后几行的数据,并赋给原始的二维数组即可   链表 小结
+ 链表是以节点的方式来存储,是 链式存储  每个节点包含data域,next域:指向下一个节点 如图:发现链表的各个节点 不一定是连续存储 链表分 带头节点的链表 和 没有头节点的链表 ,根据实际的需求来确定  双向链表  栈  栈的英文为( stack) 栈是一个先入后出( FILO-First In last out)的有序列表。 栈(stack)是限制线性表中元素的插入和删除只能在线性表的同一端进行的种特殊线性表。允许插入和删除的一端,为变化的一端,称为栈顶(Top),另端为固定的一端,称为栈底( Bottom) 根据栈的定义可知,最先放入栈中元素在栈底,最后放入的元素在栈项,而删除元素刚好相反,最后放入的元素最先删除,最先放入的元素最后删除  应用场景  子程序的调用:在跳往子程序前,会先将下个指令的地址存到堆栈中,直到子程序执行完后再将地址取出,以回到原来的程序中。 处理递归调用:和子程序的调用类似,只是除了储存下一个指令的地址外,也将参数、区域变量等数据存入堆栈中。 表达式的转换[中缀表达式转后缀表达式]与求值(实际解决)。 二叉树的遍历 图形的深度优先 (depth-first)搜索法。  前,中,后缀表达式 逆波兰表达式</description>
     </item>
     
   </channel>
